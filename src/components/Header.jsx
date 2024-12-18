@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <div
       className={`fixed py-5 top-0 left-0 w-full z-30 flex justify-between items-center lg:px-32 md:px-16 px-4 transition-all duration-300 ${
-        scrolled ? "bg-gray-800/50 shadow-md" : ""
+        scrolled ? " bg-[#232b2c96]/40 backdrop-blur-[4px] shadow-md" : ""
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="flex items-center">
@@ -46,12 +46,12 @@ export default function Header() {
             Anasayfa
           </li>
           <a href="mailto:info@securetrace.ai" target="_blank">
-            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white opacity-80">
+            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white ">
               Galeri
             </li>
           </a>
           <a href="mailto:info@securetrace.ai" target="_blank">
-            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white opacity-80">
+            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white ">
               İletişim
             </li>
           </a>

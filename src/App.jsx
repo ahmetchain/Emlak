@@ -1,3 +1,4 @@
+import AboutSection from "./components/AboutSection";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -9,6 +10,7 @@ function App() {
         <Header />
         <HeroSection />
         <WhatsAppButton />
+        <AboutSection />
       </div>
     </>
   );
