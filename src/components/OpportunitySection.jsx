@@ -1,6 +1,5 @@
-import Ev from "../assets/mim2.avif";
-import Ev2 from "../assets/op.jpg";
 import Ev3 from "../assets/Basliksiz-1-1.png";
+
 export default function OpportunitySection() {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-center gap-8 py-16 ">
