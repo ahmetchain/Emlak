@@ -49,7 +49,7 @@ export default function ServicesSection() {
         <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
           Yatırım Yolculuğunuzda Yanınızdayız
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="sm:text-lg text-gray-600">
           Bu adım adım süreçte size nasıl yardımcı olduğumuzu öğrenin.
         </p>
       </div>

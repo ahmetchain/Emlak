@@ -30,7 +30,7 @@ export default function ContactForm() {
         <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
           Özel İsteğinizi Şimdi Gönderin
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="sm:text-lg px-3 pt-2 text-gray-600">
           Sizin için en uygun konutu bulmamıza yardımcı olun.
         </p>
       </div>

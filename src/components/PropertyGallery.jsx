@@ -14,10 +14,10 @@ export default function PropertyGallery() {
     <section className="py-16 bg-[#1b1b1b]">
       {/* Section Title */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+        <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
           Türkiyeden Modern Konutlar
         </h2>
-        <p className="text-lg text-gray-400">
+        <p className=" text-sm sm:text-lg text-gray-400">
           Türkiye'nin en güzel şehirlerindeki modern konutlar
         </p>
       </div>
@@ -47,7 +47,7 @@ export default function PropertyGallery() {
             </div>
 
             {/* Black Box with City Name */}
-            <div className="absolute bottom-0 right-0 bg-black/90 text-white text-lg font-semibold px-4 py-2">
+            <div className="absolute bottom-0 right-0 bg-black/90 text-white sm:text-lg font-semibold px-4 py-2">
               {property.city}
             </div>
           </div>

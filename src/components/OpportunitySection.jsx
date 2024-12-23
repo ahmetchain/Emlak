@@ -11,12 +11,12 @@ export default function OpportunitySection() {
         />
       </div>
 
-      <div className="w-full lg:w-1/3 flex flex-col justify-center ml-20">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-snug">
+      <div className="w-full lg:w-1/3 flex flex-col justify-center text-center items-center sm:text-left sm:items-start  sm:ml-20 ">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-snug">
           OM GROUP İLE, YAŞAM GÜÇLENİYOR
         </h2>
 
-        <p className="text-gray-600 text-lg sm:text-xl mb-8 leading-relaxed">
+        <p className="text-gray-600 text-lg  sm:text-xl mb-8 leading-relaxed">
           OM Group olarak; çağdaş Türkiye’nin modern yüzünü yansıtan hatırı
           sayılır, nitelikli, güçlü, güvenilir ve ayrıcalıklı projeleri
           sürdürülebilir kılmak, birçok insana ulaştırmak bize sonsuz bir
