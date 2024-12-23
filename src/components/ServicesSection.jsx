@@ -46,10 +46,10 @@ export default function ServicesSection() {
     <section className="py-16 bg-gray-50">
       {/* Section Title */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-4">
           Yatırım Yolculuğunuzda Yanınızdayız
         </h2>
-        <p className="sm:text-lg text-gray-600">
+        <p className="sm:text-lg px-3 text-gray-600">
           Bu adım adım süreçte size nasıl yardımcı olduğumuzu öğrenin.
         </p>
       </div>

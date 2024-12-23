@@ -16,7 +16,7 @@ export default function OpportunitySection() {
           OM GROUP İLE, YAŞAM GÜÇLENİYOR
         </h2>
 
-        <p className="text-gray-600 text-lg  sm:text-xl mb-8 leading-relaxed">
+        <p className="text-gray-600 text-lg px-2 sm:px-0  sm:text-xl mb-8 leading-relaxed">
           OM Group olarak; çağdaş Türkiye’nin modern yüzünü yansıtan hatırı
           sayılır, nitelikli, güçlü, güvenilir ve ayrıcalıklı projeleri
           sürdürülebilir kılmak, birçok insana ulaştırmak bize sonsuz bir

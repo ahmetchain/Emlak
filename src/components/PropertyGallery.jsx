@@ -14,7 +14,7 @@ export default function PropertyGallery() {
     <section className="py-16 bg-[#1b1b1b]">
       {/* Section Title */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+        <h2 className="text-2xl lg:text-5xl font-bold text-white mb-4">
           Türkiyeden Modern Konutlar
         </h2>
         <p className=" text-sm sm:text-lg text-gray-400">
