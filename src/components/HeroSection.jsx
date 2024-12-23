@@ -19,7 +19,7 @@ export default function HeroSection() {
           {/* Siyah arka plan ile yazıyı öne çıkar */}
           <div className="bg-black/75 p-4 sm:p-6 lg:p-10 shadow-lg rounded-lg">
             {/* Başlık */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight sm:leading-snug">
+            <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight sm:leading-snug">
               Türkiye’deki{" "}
               <span className="text-gray-300">Emlak Yatırımlarınız</span> İçin
               Profesyonel Hizmet

@@ -36,22 +36,22 @@ export default function Header() {
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="flex items-center">
-        <h1 className="text-[11px] sm:text-sm md:text-base lg:text-xl font-semibold text-white">
+        <h1 className="text-[15px] sm:text-sm md:text-base lg:text-xl font-semibold text-white">
           LOGO
         </h1>
       </div>
       <div>
         <ul className="flex items-center gap-x-5">
-          <li className="cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white">
+          <li className="cursor-pointer text-[13px] md:text-sm lg:text-lg font-semibold text-white">
             Anasayfa
           </li>
           <a href="mailto:info@securetrace.ai" target="_blank">
-            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white ">
+            <li className="flex items-center cursor-pointer text-[13px] md:text-sm lg:text-lg font-semibold text-white ">
               Galeri
             </li>
           </a>
           <a href="mailto:info@securetrace.ai" target="_blank">
-            <li className="flex items-center cursor-pointer text-[9px] md:text-sm lg:text-lg font-semibold text-white ">
+            <li className="flex items-center cursor-pointer text-[13px] md:text-sm lg:text-lg font-semibold text-white ">
               İletişim
             </li>
           </a>
