@@ -1,29 +1,16 @@
-import AboutSection from "./components/AboutSection";
-import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import OpportunitySection from "./components/OpportunitySection";
-import PropertyGallery from "./components/PropertyGallery";
-import ServicesSection from "./components/ServicesSection";
-import WhatsAppButton from "./components/WhatsAppButton";
-import WhyInvestSection from "./components/WhyInvestSection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Page/Home";
+import Gallery from "./Page/Gallery";
 
 function App() {
   return (
     <>
-      <div className="h-screen">
-        <Header />
-        <HeroSection />
-        <WhatsAppButton />
-        <AboutSection />
-        <OpportunitySection />
-        <PropertyGallery />
-        <WhyInvestSection />
-        <ServicesSection />
-        <ContactForm />
-        <Footer />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+      </Router>
     </>
   );
 }
