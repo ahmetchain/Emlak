@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo and Navigation */}
         <div>
-          <h1 className="text-2xl font-bold mb-6 text-white">OM Group</h1>
+          <h1 className="text-2xl font-bold mb-6 text-white">LOGO</h1>
           <nav>
             <ul className="space-y-3 text-sm">
               <li>
