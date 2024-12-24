@@ -3,17 +3,44 @@ import Header from "../components/Header";
 import TitleSection from "../Gallery/TitleSection";
 import Category from "../Gallery/Category";
 import galeri from "../assets/izmir.jpg";
+
 export default function Gallery() {
   const categories = [
     {
       title: "Müstakil Evler",
       properties: [
-        { id: 1, image: galeri, info: "2+1, İzmir" },
-        { id: 2, image: galeri, info: "3+1, Bursa" },
+        {
+          id: 1,
+          image: galeri,
+          info: {
+            roomCount: "2+1",
+            propertyType: "Müstakil Ev",
+            city: "İzmir",
+            avgPrice: "1,250,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
+        },
+        {
+          id: 2,
+          image: galeri,
+          info: {
+            roomCount: "3+1",
+            propertyType: "Müstakil Ev",
+            city: "Bursa",
+            avgPrice: "1,750,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
+        },
         {
           id: 3,
           image: galeri,
-          info: "4+2, Antalya",
+          info: {
+            roomCount: "4+2",
+            propertyType: "Müstakil Ev",
+            city: "Antalya",
+            avgPrice: "2,300,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
         },
       ],
     },
@@ -23,27 +50,51 @@ export default function Gallery() {
         {
           id: 4,
           image: galeri,
-          info: "5+1, Bodrum",
+          info: {
+            roomCount: "5+1",
+            propertyType: "Villa",
+            city: "Bodrum",
+            avgPrice: "5,500,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
         },
         {
           id: 5,
           image: galeri,
-          info: "6+2, Fethiye",
+          info: {
+            roomCount: "6+2",
+            propertyType: "Villa",
+            city: "Fethiye",
+            avgPrice: "6,200,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
         },
       ],
     },
     {
-      title: galeri,
+      title: "Rezidanslar",
       properties: [
         {
           id: 6,
           image: galeri,
-          info: "1+1, İstanbul",
+          info: {
+            roomCount: "1+1",
+            propertyType: "Rezidans",
+            city: "İstanbul",
+            avgPrice: "950,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
         },
         {
           id: 7,
           image: galeri,
-          info: "2+1, Ankara",
+          info: {
+            roomCount: "2+1",
+            propertyType: "Rezidans",
+            city: "Ankara",
+            avgPrice: "1,150,000 TL",
+            contactNumber: "0 555 555 55 55",
+          },
         },
       ],
     },

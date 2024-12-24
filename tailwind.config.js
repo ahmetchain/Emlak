@@ -1,8 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        arabic: ["Cairo", "sans-serif"], // Arapça için özel font
+        default: ["Inter", "sans-serif"], // Türkçe ve varsayılan için font
+      },
       keyframes: {
         fadeInUp: {
           from: { opacity: "0", transform: "translateY(50px)" },
@@ -19,5 +26,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-rtl"), // Sağdan sola destek
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".rtl": {
+          direction: "rtl",
+        },
+        ".ltr": {
+          direction: "ltr",
+        },
+      });
+    }),
+  ],
 };
