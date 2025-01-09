@@ -14,104 +14,108 @@ export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      icon: <Plane size={28} />,
+      icon: <Plane size={24} />,
       title: "VIP Transfer Hizmeti",
       description: "Havalimanından özel araçlarımızla karşılama ve transfer hizmeti sunuyoruz.",
     },
     {
       id: 2,
-      icon: <Hotel size={28} />,
+      icon: <Hotel size={24} />,
       title: "Premium Konaklama",
       description: "Lüks otellerde konaklamanız için özel rezervasyon hizmeti sağlıyoruz.",
     },
     {
       id: 3,
-      icon: <Home size={28} />,
+      icon: <Home size={24} />,
       title: "Özel Portföy Sunumu",
       description: "Size özel seçilmiş prestijli gayrimenkul portföyümüzü profesyonel sunumlarla tanıtıyoruz.",
     },
     {
       id: 4,
-      icon: <FileCheck size={28} />,
+      icon: <FileCheck size={24} />,
       title: "Hukuki Danışmanlık",
       description: "Uzman hukuk ekibimizle tüm yasal süreçleri güvenle yönetiyoruz.",
     },
     {
       id: 5,
-      icon: <Flag size={28} />,
+      icon: <Flag size={24} />,
       title: "Vatandaşlık Süreci",
       description: "Yatırım yoluyla vatandaşlık başvurunuzda A'dan Z'ye destek sağlıyoruz.",
     },
     {
       id: 6,
-      icon: <Briefcase size={28} />,
+      icon: <Briefcase size={24} />,
       title: "Yatırım Danışmanlığı",
       description: "En doğru yatırım kararları için profesyonel danışmanlık hizmeti sunuyoruz.",
-    },
-    {
-      id: 7,
-      icon: <Key size={28} />,
-      title: "Anahtar Teslim Hizmet",
-      description: "Satın alma sürecinden sonra tüm yerleşim sürecinizde yanınızdayız.",
-    },
-    {
-      id: 8,
-      icon: <HeartHandshake size={28} />,
-      title: "Satış Sonrası Destek",
-      description: "Uzun vadeli iş ortağınız olarak satış sonrası tüm ihtiyaçlarınızda yanınızdayız.",
-    },
-    {
-      id: 9,
-      icon: <Car size={28} />,
-      title: "Özel Şoför Hizmeti",
-      description: "Emlak gezilerinizde lüks araçlarımızla özel şoför hizmeti sağlıyoruz.",
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 bg-white">
       {/* Section Title */}
-      <div className="text-center mb-16 px-4">
-        <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6">
-          Premium Hizmetlerimiz
-        </h2>
-        <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          Gayrimenkul yatırım sürecinizde size özel, ayrıcalıklı hizmetler sunuyoruz.
-          Her adımda profesyonel ekibimizle yanınızdayız.
-        </p>
+      <div className="container mx-auto px-4 mb-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6">
+            Premium Hizmetlerimiz
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Gayrimenkul yatırım sürecinizde size özel, ayrıcalıklı hizmetler sunuyoruz.
+          </p>
+        </div>
       </div>
 
-      {/* Services Grid */}
+      {/* Services List */}
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+        <div className="max-w-6xl mx-auto">
+          {services.map((service, index) => (
             <div
               key={service.id}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group"
+              className={`flex flex-col md:flex-row items-center gap-8 py-12 ${
+                index !== services.length - 1 ? 'border-b border-gray-100' : ''
+              }`}
             >
               {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 bg-black/5 rounded-full mb-6 group-hover:bg-black/10 transition-colors mx-auto">
+              <div className="w-16 h-16 flex items-center justify-center bg-black/5 rounded-full shrink-0">
                 <div className="text-black">
                   {service.icon}
                 </div>
               </div>
               
               {/* Content */}
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed max-w-2xl">
                   {service.description}
                 </p>
+              </div>
+
+              {/* Arrow Icon - Optional */}
+              <div className="hidden md:flex flex-1 justify-end">
+                <div className="w-8 h-8 flex items-center justify-center text-gray-400">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Alt Kısım */}
-        <div className="text-center mt-16">
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center mt-20">
+          <p className="text-xl text-gray-700 mb-8">
             Sizin için en uygun yatırım fırsatlarını değerlendirmek üzere
             uzman ekibimizle görüşmek ister misiniz?
           </p>
