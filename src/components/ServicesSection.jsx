@@ -40,6 +40,28 @@ export default function ServicesSection() {
       description:
         "İşlemin tamamlanmasının ardından sizi havaalanına kadar yalnız bırakmıyoruz.",
     },
+    {
+      id: 7,
+      icon: "📄",
+      title: "Tüm Belgeleri Kontrol Ediyoruz",
+      description:
+        "İşlemin tüm aşamalarında size eşlik ederek belgelerinizi kontrol ediyoruz.",
+    },
+    {
+      id: 8,
+      icon: "📜",
+      title: "Vatandaşlık İşlemlerine Yardımcı Oluyoruz",
+      description: "Yatırım yoluyla vatandaşlık almanıza destek sağlıyoruz.",
+    },
+    {
+      id: 9,
+      icon: "🛫",
+      title: "Havaalanına Kadar Eşlik Ediyoruz",
+      description:
+        "İşlemin tamamlanmasının ardından sizi havaalanına kadar yalnız bırakmıyoruz.",
+    },
+ 
+ 
   ];
 
   return (

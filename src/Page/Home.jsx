@@ -8,7 +8,7 @@ import PropertyGallery from "../components/PropertyGallery";
 import ServicesSection from "../components/ServicesSection";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WhyInvestSection from "../components/WhyInvestSection";
-
+import AboutSectiontwo from "../components/AbboutSectiontwo";
 export default function Home() {
   return (
     <>
@@ -17,10 +17,11 @@ export default function Home() {
         <HeroSection />
         <WhatsAppButton />
         <AboutSection />
-        <OpportunitySection />
+        <OpportunitySection /> 
+        <ServicesSection />
+        <AboutSectiontwo /> 
         <PropertyGallery />
         <WhyInvestSection />
-        <ServicesSection />
         <ContactForm />
         <Footer />
       </div>
