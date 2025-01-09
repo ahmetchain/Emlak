@@ -17,11 +17,11 @@ export default function Home() {
         <HeroSection />
         <WhatsAppButton />
         <AboutSection />
-        <OpportunitySection /> 
+        <OpportunitySection />
         <ServicesSection />
-        <AboutSectiontwo /> 
-        <PropertyGallery />
+        <AboutSectiontwo />
         <WhyInvestSection />
+        <PropertyGallery />
         <ContactForm />
         <Footer />
       </div>
