@@ -7,46 +7,93 @@ import {
   Car,
   Briefcase,
   Key,
-  HeartHandshake
-} from 'lucide-react';
+  HeartHandshake,
+  CheckCircle,
+  ClipboardList,
+  Handshake,
+  MapPin,
+  ShoppingBag,
+} from "lucide-react";
 
 export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      icon: <Plane size={24} />,
-      title: "VIP Transfer Hizmeti",
-      description: "Havalimanından özel araçlarımızla karşılama ve transfer hizmeti sunuyoruz.",
+      icon: <Home size={24} />,
+      title: "نجد جميع المنازل التي تناسب معاييرك",
+      description:
+        "أولاً، نقوم بتحديد جميع المنازل التي تتوافق مع معاييرك المطلوبة.",
     },
     {
       id: 2,
-      icon: <Hotel size={24} />,
-      title: "Premium Konaklama",
-      description: "Lüks otellerde konaklamanız için özel rezervasyon hizmeti sağlıyoruz.",
+      icon: <CheckCircle size={24} />,
+      title: "نقوم بفحص وتقييم جميع المنازل",
+      description:
+        "نقوم بفحص وتقييم جميع المنازل التي وجدناها لك لضمان جودتها.",
     },
     {
       id: 3,
-      icon: <Home size={24} />,
-      title: "Özel Portföy Sunumu",
-      description: "Size özel seçilmiş prestijli gayrimenkul portföyümüzü profesyonel sunumlarla tanıtıyoruz.",
+      icon: <ClipboardList size={24} />,
+      title: "نرسل لك جميع التقارير والمعلومات",
+      description:
+        "إذا كانت المنازل تلبي جميع المعايير، نرسل لك جميع التقارير والمعلومات.",
     },
     {
       id: 4,
-      icon: <FileCheck size={24} />,
-      title: "Hukuki Danışmanlık",
-      description: "Uzman hukuk ekibimizle tüm yasal süreçleri güvenle yönetiyoruz.",
+      icon: <Handshake size={24} />,
+      title: "التفاوض نيابة عنك",
+      description:
+        "في حال أعجبك المنزل، نقوم بالتفاوض نيابة عنك إذا لزم الأمر.",
     },
     {
       id: 5,
-      icon: <Flag size={24} />,
-      title: "Vatandaşlık Süreci",
-      description: "Yatırım yoluyla vatandaşlık başvurunuzda A'dan Z'ye destek sağlıyoruz.",
+      icon: <Plane size={24} />,
+      title: "دعوتك إلى تركيا",
+      description: "إذا قررت الشراء، ندعوك لزيارة تركيا لإتمام العملية.",
     },
     {
       id: 6,
+      icon: <Car size={24} />,
+      title: "استقبالك في المطار",
+      description: "نستقبلك في المطار بسياراتنا الخاصة لضمان راحتك.",
+    },
+    {
+      id: 7,
+      icon: <Hotel size={24} />,
+      title: "الدعم في حجز الفنادق",
+      description: "نوفر لك الدعم في حجز الفنادق لضمان إقامة مريحة.",
+    },
+    {
+      id: 8,
+      icon: <MapPin size={24} />,
+      title: "جولة ميدانية معك",
+      description: "عند وصولك، نقوم بجولة ميدانية معك لزيارة المنازل المناسبة.",
+    },
+    {
+      id: 9,
+      icon: <FileCheck size={24} />,
+      title: "دعم كامل أثناء عملية الشراء",
+      description: "نرافقك خلال جميع خطوات الشراء ونوفر لك الدعم اللازم.",
+    },
+    {
+      id: 10,
+      icon: <HeartHandshake size={24} />,
+      title: "المساعدة بعد الشراء",
+      description:
+        "حتى بعد إتمام عملية الشراء، نحن هنا لمساعدتك في أي استفسار.",
+    },
+    {
+      id: 11,
+      icon: <Flag size={24} />,
+      title: "المساعدة في الوثائق والإجراءات",
+      description: "نرافقك لتوفير جميع الوثائق والإجراءات المطلوبة.",
+    },
+    {
+      id: 12,
       icon: <Briefcase size={24} />,
-      title: "Yatırım Danışmanlığı",
-      description: "En doğru yatırım kararları için profesyonel danışmanlık hizmeti sunuyoruz.",
+      title: "عمولة بنسبة 5% فقط",
+      description:
+        "لا يتم طلب أي رسوم أثناء العملية، ويتم تحصيل عمولة بنسبة 5% فقط بعد البيع.",
     },
   ];
 
@@ -56,10 +103,10 @@ export default function ServicesSection() {
       <div className="container mx-auto px-4 mb-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Premium Hizmetlerimiz
+            خدماتنا المميزة
           </h2>
           <p className="text-gray-600 text-lg">
-            Gayrimenkul yatırım sürecinizde size özel, ayrıcalıklı hizmetler sunuyoruz.
+            نقدم لكم خدمات حصرية ومميزة خلال عملية الاستثمار العقاري.
           </p>
         </div>
       </div>
@@ -71,16 +118,14 @@ export default function ServicesSection() {
             <div
               key={service.id}
               className={`flex flex-col md:flex-row items-center gap-8 py-12 ${
-                index !== services.length - 1 ? 'border-b border-gray-100' : ''
+                index !== services.length - 1 ? "border-b border-gray-100" : ""
               }`}
             >
               {/* Icon */}
               <div className="w-16 h-16 flex items-center justify-center bg-black/5 rounded-full shrink-0">
-                <div className="text-black">
-                  {service.icon}
-                </div>
+                <div className="text-black">{service.icon}</div>
               </div>
-              
+
               {/* Content */}
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">
@@ -116,14 +161,13 @@ export default function ServicesSection() {
         {/* Alt Kısım */}
         <div className="max-w-3xl mx-auto text-center mt-20">
           <p className="text-xl text-gray-700 mb-8">
-            Sizin için en uygun yatırım fırsatlarını değerlendirmek üzere
-            uzman ekibimizle görüşmek ister misiniz?
+            هل ترغب في التواصل مع فريقنا المتخصص لتقييم أفضل فرص الاستثمار؟
           </p>
           <a
             href="#iletisim"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
           >
-            Randevu Alın
+            احجز موعدًا
           </a>
         </div>
       </div>
