@@ -13,7 +13,7 @@ export default function OpportunitySection() {
 
       <div className="w-full lg:w-1/3 flex flex-col justify-center text-center items-center sm:text-left sm:items-start  sm:ml-20 ">
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-snug">
-          OM GROUP İLE, YAŞAM GÜÇLENİYOR
+          أخبرنا ما هو نوع المنزل الذي تحتاجه، وسنجد المنزل الأنسب لك
         </h2>
 
         <p className="text-gray-600 text-lg px-2 sm:px-0  sm:text-xl mb-8 leading-relaxed">
