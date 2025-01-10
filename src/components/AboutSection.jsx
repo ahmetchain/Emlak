@@ -1,22 +1,22 @@
-import { Building2, Target, Users2 } from 'lucide-react';
+import { Building2, Target, Users2 } from "lucide-react";
 
 export default function AboutSection() {
   const stats = [
     {
       icon: <Building2 size={32} />,
       number: "1000+",
-      text: "Tamamlanan Proje"
+      text: "Tamamlanan Proje",
     },
     {
       icon: <Target size={32} />,
       number: "20+",
-      text: "Yıllık Tecrübe"
+      text: "Yıllık Tecrübe",
     },
     {
       icon: <Users2 size={32} />,
       number: "5000+",
-      text: "Mutlu Müşteri"
-    }
+      text: "Mutlu Müşteri",
+    },
   ];
 
   return (
@@ -25,17 +25,17 @@ export default function AboutSection() {
         {/* Üst Kısım */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8">
-            Biz <span className="text-black italic">Kimiz?</span>
+            من <span className="text-black italic">نحن؟</span>
           </h2>
-          
-          <p className="text-gray-600 text-lg sm:text-xl md:text-2xl leading-relaxed">
-            Yatırım ve yaşam alanlarınızı yeniden tanımlıyoruz. Modern yapılar, 
-            estetik tasarımlar ve güvenilir hizmet anlayışıyla hayallerinizi gerçeğe 
-            dönüştürmek için buradayız.
+          <p className="text-xl text-gray-700 italic">
+            "نحن نعمل كمستشار موثوق ومحترف لمساعدة عملائنا الكويتيين الراغبين في
+            شراء منزل في تركيا. هدفنا هو مساعدتكم في العثور على المنزل الأنسب
+            لاحتياجاتكم بكل سهولة وثقة."
           </p>
         </div>
 
         {/* İstatistikler */}
+        {/* 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <div 
@@ -57,26 +57,11 @@ export default function AboutSection() {
               </div>
             </div>
           ))}
-        </div>
+        </div>*/}
 
         {/* Alt Kısım - Misyon */}
-        <div className="max-w-3xl mx-auto text-center mt-16">
-          <p className="text-xl text-gray-700 italic">
-            "Gayrimenkul sektöründe fark yaratan yaklaşımımız ve güvenilir hizmet anlayışımızla,
-            müşterilerimizin hayallerini gerçeğe dönüştürüyoruz."
-          </p>
-          
-          <div className="mt-8">
-            <a
-              href="#iletisim"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
-            >
-              Bize Ulaşın
-            </a>
-          </div>
-        </div>
+        <div className="max-w-3xl mx-auto text-center mt-16"></div>
       </div>
     </section>
   );
 }
-  
