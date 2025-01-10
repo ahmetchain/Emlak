@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import İzmir from "../assets/izmir.jpg";
-import { Heart } from "lucide-react";
 
 export default function PropertyGallery() {
   const properties = [
