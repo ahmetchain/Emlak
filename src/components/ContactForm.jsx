@@ -4,22 +4,18 @@ import Select from "react-select";
 export default function ContactForm() {
   // Şehir seçenekleri
   const cityOptions = [
-    { value: "istanbul", label: "İstanbul" },
-    { value: "ankara", label: "Ankara" },
-    { value: "izmir", label: "İzmir" },
-    { value: "antalya", label: "Antalya" },
-    { value: "bursa", label: "Bursa" },
-    { value: "mugla", label: "Muğla" },
-    { value: "aydin", label: "Aydın" },
-    { value: "bodrum", label: "Bodrum" },
+    { value: "istanbul", label: "istanbul" },
+    { value: "izmir", label: "izmir" },
+    { value: "antalya", label: "antalya" },
+    { value: "mugla", label: "mugla" },
   ];
 
   // Durum seçenekleri
   const statusOptions = [
-    { value: "for_sale", label: "Satılık" },
-    { value: "for_rent", label: "Kiralık" },
-    { value: "for_daily_rent", label: "Günlük Kiralık" },
-    { value: "for_seasonal", label: "Sezonluk" },
+    { value: "for_sale", label: "للبيع" },
+    { value: "for_rent", label: "للإيجار" },
+    { value: "for_daily_rent", label: "إيجار يومي" },
+    { value: "for_seasonal", label: "إيجار موسمي" },
   ];
 
   const [formData, setFormData] = useState({
@@ -38,15 +34,13 @@ export default function ContactForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Şehir seçimi için özel handle fonksiyonu
   const handleCityChange = (selectedOptions) => {
     setFormData({
       ...formData,
-      cities: selectedOptions || [], // null check
+      cities: selectedOptions || [],
     });
   };
 
-  // Durum seçimi için özel handle fonksiyonu
   const handleStatusChange = (selectedOptions) => {
     setFormData({
       ...formData,
@@ -57,38 +51,37 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-    alert("Talebiniz başarıyla gönderildi!");
+    alert("تم إرسال طلبك بنجاح!");
   };
 
-  // React Select için özel stiller
   const customStyles = {
     control: (base) => ({
       ...base,
       padding: "2px",
       borderColor: "#e5e7eb",
       "&:hover": {
-        borderColor: "#e5e7eb"
-      }
+        borderColor: "#e5e7eb",
+      },
     }),
     multiValue: (base) => ({
       ...base,
       backgroundColor: "#f3f4f6",
       borderRadius: "4px",
-      padding: "2px"
+      padding: "2px",
     }),
     multiValueLabel: (base) => ({
       ...base,
       color: "#374151",
-      fontWeight: "500"
+      fontWeight: "500",
     }),
     multiValueRemove: (base) => ({
       ...base,
       color: "#374151",
       "&:hover": {
         backgroundColor: "#e5e7eb",
-        color: "#000"
-      }
-    })
+        color: "#000",
+      },
+    }),
   };
 
   return (
@@ -96,10 +89,11 @@ export default function ContactForm() {
       {/* Section Title */}
       <div className="text-center mb-12">
         <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-4">
-          Size Özel Emlak Araması
+          البحث عن عقار يناسبك
         </h2>
         <p className="sm:text-lg px-3 pt-2 text-gray-600 max-w-2xl mx-auto">
-          Hayalinizdeki evi bulmak için formu doldurun, uzmanlarımız size özel seçeneklerle sizinle iletişime geçsin.
+          املأ النموذج للعثور على المنزل الذي تحلم به، وسنتواصل معك لتقديم
+          الخيارات المناسبة.
         </p>
       </div>
 
@@ -109,10 +103,10 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {/* Email - Tam Genişlik */}
+          {/* Email */}
           <div className="col-span-1 md:col-span-2">
             <label className="block text-gray-700 font-semibold mb-2">
-              E-posta Adresiniz <span className="text-red-500">*</span>
+              بريدك الإلكتروني <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -120,15 +114,15 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleInputChange}
               className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-              placeholder="ornek@email.com"
+              placeholder="example@email.com"
               required
             />
           </div>
 
-          {/* Şehir Seçimi - Tam Genişlik */}
+          {/* Şehir Seçimi */}
           <div className="col-span-1 md:col-span-2">
             <label className="block text-gray-700 font-semibold mb-2">
-              Şehir(ler) (Opsiyonel)
+              المدن (اختياري)
             </label>
             <Select
               isMulti
@@ -136,22 +130,22 @@ export default function ContactForm() {
               options={cityOptions}
               value={formData.cities}
               onChange={handleCityChange}
-              placeholder="Şehir seçin..."
-              noOptionsMessage={() => "Şehir bulunamadı"}
+              placeholder="اختر المدن..."
+              noOptionsMessage={() => "لا توجد مدينة"}
               styles={customStyles}
               className="text-sm"
               theme={(theme) => ({
                 ...theme,
                 colors: {
                   ...theme.colors,
-                  primary: '#3b82f6',
-                  primary25: '#eff6ff',
-                  primary50: '#dbeafe',
-                }
+                  primary: "#3b82f6",
+                  primary25: "#eff6ff",
+                  primary50: "#dbeafe",
+                },
               })}
             />
             <p className="mt-1 text-sm text-gray-500">
-              Birden fazla şehir seçebilirsiniz
+              يمكنك اختيار أكثر من مدينة
             </p>
           </div>
 
@@ -160,7 +154,7 @@ export default function ContactForm() {
             {/* Konut Tipi */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
-                Konut Tipi (Opsiyonel)
+                نوع العقار (اختياري)
               </label>
               <select
                 name="propertyType"
@@ -168,19 +162,19 @@ export default function ContactForm() {
                 onChange={handleInputChange}
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               >
-                <option value="">Konut Tipi Seçin</option>
-                <option value="Apartment">Daire</option>
-                <option value="Villa">Villa</option>
-                <option value="Office">Ofis</option>
-                <option value="Land">Arsa</option>
-                <option value="Shop">Dükkan</option>
+                <option value="">اختر نوع العقار</option>
+                <option value="Apartment">شقة</option>
+                <option value="Villa">فيلا</option>
+                <option value="Office">مكتب</option>
+                <option value="Land">أرض</option>
+                <option value="Shop">محل تجاري</option>
               </select>
             </div>
 
             {/* Minimum Fiyat */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
-                Minimum Fiyat (Opsiyonel)
+                الحد الأدنى للسعر (اختياري)
               </label>
               <input
                 type="number"
@@ -188,7 +182,7 @@ export default function ContactForm() {
                 value={formData.minPrice}
                 onChange={handleInputChange}
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                placeholder="₺"
+                placeholder="﷼"
               />
             </div>
           </div>
@@ -198,7 +192,7 @@ export default function ContactForm() {
             {/* Oda Sayısı */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
-                Oda Sayısı (Opsiyonel)
+                عدد الغرف (اختياري)
               </label>
               <select
                 name="roomCount"
@@ -206,20 +200,20 @@ export default function ContactForm() {
                 onChange={handleInputChange}
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               >
-                <option value="">Oda Sayısı Seçin</option>
+                <option value="">اختر عدد الغرف</option>
                 <option value="1+0">1+0</option>
                 <option value="1+1">1+1</option>
                 <option value="2+1">2+1</option>
                 <option value="3+1">3+1</option>
                 <option value="4+1">4+1</option>
-                <option value="5+1">5+1 ve üzeri</option>
+                <option value="5+1">5+1 أو أكثر</option>
               </select>
             </div>
 
             {/* Maksimum Fiyat */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
-                Maksimum Fiyat (Opsiyonel)
+                الحد الأقصى للسعر (اختياري)
               </label>
               <input
                 type="number"
@@ -227,15 +221,15 @@ export default function ContactForm() {
                 value={formData.maxPrice}
                 onChange={handleInputChange}
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                placeholder="₺"
+                placeholder="﷼"
               />
             </div>
           </div>
 
-          {/* Durum - Tam Genişlik */}
+          {/* Durum */}
           <div className="col-span-1 md:col-span-2">
             <label className="block text-gray-700 font-semibold mb-2">
-              Durum(lar) (Opsiyonel)
+              الحالة (اختياري)
             </label>
             <Select
               isMulti
@@ -243,46 +237,46 @@ export default function ContactForm() {
               options={statusOptions}
               value={formData.statuses}
               onChange={handleStatusChange}
-              placeholder="Durum seçin..."
-              noOptionsMessage={() => "Durum bulunamadı"}
+              placeholder="اختر الحالة..."
+              noOptionsMessage={() => "لا توجد حالة"}
               styles={customStyles}
               className="text-sm"
               theme={(theme) => ({
                 ...theme,
                 colors: {
                   ...theme.colors,
-                  primary: '#3b82f6',
-                  primary25: '#eff6ff',
-                  primary50: '#dbeafe',
-                }
+                  primary: "#3b82f6",
+                  primary25: "#eff6ff",
+                  primary50: "#dbeafe",
+                },
               })}
             />
             <p className="mt-1 text-sm text-gray-500">
-              Birden fazla durum seçebilirsiniz
+              يمكنك اختيار أكثر من حالة
             </p>
           </div>
 
-          {/* Mesaj Alanı - Tam Genişlik */}
+          {/* Mesaj */}
           <div className="col-span-1 md:col-span-2">
             <label className="block text-gray-700 font-semibold mb-2">
-              Özel Mesajınız (Opsiyonel)
+              رسالتك الخاصة (اختياري)
             </label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all min-h-[120px]"
-              placeholder="Eklemek istediğiniz özel notları buraya yazabilirsiniz..."
+              placeholder="يمكنك كتابة ملاحظات إضافية هنا..."
             />
           </div>
 
-          {/* Gönder Butonu - Tam Genişlik */}
+          {/* Gönder Butonu */}
           <div className="col-span-1 md:col-span-2 text-center">
             <button
               type="submit"
               className="w-full md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
             >
-              Talebi Gönder
+              أرسل الطلب
             </button>
           </div>
         </form>

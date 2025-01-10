@@ -7,93 +7,93 @@ import galeri from "../assets/izmir.jpg";
 export default function Gallery() {
   const categories = [
     {
-      title: "Müstakil Evler",
+      title: "المنازل المستقلة",
       properties: [
         {
           id: 1,
           image: galeri,
           info: {
-            roomCount: "2+1",
-            propertyType: "Müstakil Ev",
-            city: "İzmir",
-            avgPrice: "1,250,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٢+١",
+            propertyType: "منزل مستقل",
+            city: "إزمير",
+            avgPrice: "١٬٢٥٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
         {
           id: 2,
           image: galeri,
           info: {
-            roomCount: "3+1",
-            propertyType: "Müstakil Ev",
-            city: "Bursa",
-            avgPrice: "1,750,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٣+١",
+            propertyType: "منزل مستقل",
+            city: "بورصة",
+            avgPrice: "١٬٧٥٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
         {
           id: 3,
           image: galeri,
           info: {
-            roomCount: "4+2",
-            propertyType: "Müstakil Ev",
-            city: "Antalya",
-            avgPrice: "2,300,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٤+٢",
+            propertyType: "منزل مستقل",
+            city: "أنطاليا",
+            avgPrice: "٢٬٣٠٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
       ],
     },
     {
-      title: "Villalar",
+      title: "الفلل",
       properties: [
         {
           id: 4,
           image: galeri,
           info: {
-            roomCount: "5+1",
-            propertyType: "Villa",
-            city: "Bodrum",
-            avgPrice: "5,500,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٥+١",
+            propertyType: "فيلا",
+            city: "بودروم",
+            avgPrice: "٥٬٥٠٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
         {
           id: 5,
           image: galeri,
           info: {
-            roomCount: "6+2",
-            propertyType: "Villa",
-            city: "Fethiye",
-            avgPrice: "6,200,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٦+٢",
+            propertyType: "فيلا",
+            city: "فتحية",
+            avgPrice: "٦٬٢٠٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
       ],
     },
     {
-      title: "Rezidanslar",
+      title: "الشقق الفندقية",
       properties: [
         {
           id: 6,
           image: galeri,
           info: {
-            roomCount: "1+1",
-            propertyType: "Rezidans",
-            city: "İstanbul",
-            avgPrice: "950,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "١+١",
+            propertyType: "شقة فندقية",
+            city: "إسطنبول",
+            avgPrice: "٩٥٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
         {
           id: 7,
           image: galeri,
           info: {
-            roomCount: "2+1",
-            propertyType: "Rezidans",
-            city: "Ankara",
-            avgPrice: "1,150,000 TL",
-            contactNumber: "0 555 555 55 55",
+            roomCount: "٢+١",
+            propertyType: "شقة فندقية",
+            city: "أنقرة",
+            avgPrice: "١٬١٥٠٬٠٠٠ ﷼",
+            contactNumber: "٠ ٥٥٥ ٥٥٥ ٥٥ ٥٥",
           },
         },
       ],
@@ -107,8 +107,8 @@ export default function Gallery() {
         <div className="py-20">
           {/* Başlık Bölümü */}
           <TitleSection
-            title="Galeri"
-            subtitle="Türkiye'nin en güzel şehirlerindeki modern konut seçeneklerimizi keşfedin."
+            title="المعرض"
+            subtitle="اكتشف خيارات السكن الحديثة في أجمل مدن تركيا."
           />
           {/* Kategoriler */}
           <div className="container mx-auto px-4">

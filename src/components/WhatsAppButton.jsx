@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
         <div className="fixed bottom-[170px] right-4 sm:right-10 bg-white w-[290px] sm:w-80 p-4 rounded-lg shadow-lg z-50">
           <div className="flex items-center justify-between border-b pb-2 mb-2">
             <h3 className="text-lg font-semibold text-gray-800">
-              Konuşma Başlat
+              ابدأ المحادثة الآن
             </h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -34,8 +34,8 @@ export default function WhatsAppButton() {
             </button>
           </div>
           <p className="text-sm text-gray-600 mb-4">
-            Destek butonuna tıklayarak WhatsApp üzerinden hemen iletişime
-            geçebilirsiniz. Ekibimiz size geri dönüş yapacaktır.
+            اضغط على زر الدعم للتواصل معنا عبر WhatsApp. نحن هنا لتلبية جميع
+            استفساراتكم وتوفير المعلومات اللازمة.
           </p>
           <a
             href="https://wa.me/901234567890"
@@ -48,7 +48,7 @@ export default function WhatsAppButton() {
               alt="WhatsApp"
               className="w-6 h-6"
             />
-            Destek Hattı
+            تواصل عبر WhatsApp
           </a>
         </div>
       )}
