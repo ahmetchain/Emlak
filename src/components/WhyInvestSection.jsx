@@ -1,37 +1,48 @@
-import { Shield, Award, Clock, Users, Building2, Handshake } from 'lucide-react';
+import {
+  Shield,
+  Award,
+  Clock,
+  Users,
+  Building2,
+  Handshake,
+} from "lucide-react";
 
 export default function WhyInvestSection() {
   const reasons = [
     {
       icon: <Shield size={32} />,
-      title: "Güvenilir Yatırım",
-      description: "20 yılı aşkın tecrübemizle, yatırımlarınızı güvenle değerlendiriyoruz."
+      title: "دعم استثماري آمن",
+      description:
+        "نعمل كوسيط موثوق بينكم وبين وكلاء العقارات لضمان تحقيق متطلباتكم بدقة.",
     },
     {
       icon: <Award size={32} />,
-      title: "Kaliteli Hizmet",
-      description: "Sektörde kalite standartlarını belirleyen öncü yaklaşımımız."
+      title: "تواصل مع أفضل الوكلاء",
+      description:
+        "نقوم بالتنسيق مع وكلاء العقارات الذين تختارونهم لتلبية احتياجاتكم بشكل كامل.",
     },
     {
       icon: <Clock size={32} />,
-      title: "Hızlı Süreç",
-      description: "Profesyonel ekibimizle tüm işlemlerinizi hızla sonuçlandırıyoruz."
+      title: "إجراءات سريعة وسهلة",
+      description: "نحرص على تسهيل جميع الإجراءات العقارية بسرعة وكفاءة.",
     },
     {
       icon: <Users size={32} />,
-      title: "Müşteri Memnuniyeti",
-      description: "Binlerce mutlu müşteri ile güçlenen bir başarı hikayesi."
+      title: "شراكة موثوقة",
+      description:
+        "نحن شركاؤكم في جميع خطوات عملية الاستثمار، من البداية حتى النهاية.",
     },
     {
       icon: <Building2 size={32} />,
-      title: "Prestijli Projeler",
-      description: "Türkiye'nin en değerli lokasyonlarında seçkin projeler."
+      title: "توفير الخيارات المثلى",
+      description:
+        "نساعدكم في العثور على أفضل العروض العقارية بما يتناسب مع متطلباتكم.",
     },
     {
       icon: <Handshake size={32} />,
-      title: "Güçlü İşbirlikleri",
-      description: "Sektörün önde gelen markalarıyla stratejik ortaklıklar."
-    }
+      title: "التزامنا بالشفافية",
+      description: "نلتزم بالعمل بشفافية كاملة لضمان رضاكم التام.",
+    },
   ];
 
   return (
@@ -39,11 +50,11 @@ export default function WhyInvestSection() {
       {/* Başlık Kısmı */}
       <div className="text-center mb-16 px-4">
         <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6">
-          Neden Bize Güvenmelisiniz?
+          لماذا تثق بنا؟
         </h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          OM Group olarak, gayrimenkul sektöründe fark yaratan yaklaşımımız ve güvenilir hizmet anlayışımızla
-          20 yıldır müşterilerimizin hayallerini gerçeğe dönüştürüyoruz.
+          نحن هنا لتقديم الدعم الكامل كوسيط عقاري موثوق به في تركيا، مما يسهل
+          عليكم جميع مراحل الاستثمار العقاري.
         </p>
       </div>
 
@@ -57,16 +68,12 @@ export default function WhyInvestSection() {
             >
               <div className="flex flex-col items-center text-center">
                 <div className="bg-black/5 p-4 rounded-full mb-6">
-                  <div className="text-black">
-                    {reason.icon}
-                  </div>
+                  <div className="text-black">{reason.icon}</div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
                   {reason.title}
                 </h3>
-                <p className="text-gray-600">
-                  {reason.description}
-                </p>
+                <p className="text-gray-600">{reason.description}</p>
               </div>
             </div>
           ))}
@@ -75,14 +82,14 @@ export default function WhyInvestSection() {
         {/* Alt Kısım CTA */}
         <div className="text-center mt-16">
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Gayrimenkul yatırımlarınızda doğru adımlar atmanız için
-            uzman ekibimiz yanınızda.
+            نحن هنا لدعمكم خلال جميع مراحل استثماراتكم العقارية وضمان تحقيق
+            أهدافكم بكل ثقة.
           </p>
           <a
             href="#iletisim"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
           >
-            Bizimle İletişime Geçin
+            تواصل معنا
           </a>
         </div>
       </div>

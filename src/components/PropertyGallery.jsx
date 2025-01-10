@@ -10,31 +10,23 @@ export default function PropertyGallery() {
   const properties = [
     {
       id: 1,
-      city: "İzmir",
       image: İzmir,
-      price: "₺4.250.000",
-      details: "3+1 | 165m² | Deniz Manzaralı",
+      city: "İzmir",
     },
     {
       id: 2,
-      city: "İstanbul",
       image: İzmir,
-      price: "₺6.850.000",
-      details: "4+1 | 185m² | Boğaz Manzaralı",
+      city: "İstanbul",
     },
     {
       id: 3,
-      city: "Ankara",
       image: İzmir,
-      price: "₺3.750.000",
-      details: "3+1 | 155m² | Site İçi",
+      city: "Antalya",
     },
     {
       id: 4,
-      city: "Antalya",
       image: İzmir,
-      price: "₺5.150.000",
-      details: "2+1 | 125m² | Denize Sıfır",
+      city: "Muğla",
     },
   ];
 
@@ -43,11 +35,11 @@ export default function PropertyGallery() {
       {/* Section Title */}
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
-          Öne Çıkan Projelerimiz
+          أبرز مشاريع تركيا
         </h2>
         <p className="text-sm sm:text-lg text-gray-400 max-w-2xl mx-auto">
-          Türkiye'nin en prestijli lokasyonlarında, modern mimari ve lüks yaşam
-          standartlarını bir araya getiren özel projelerimiz
+          اكتشفوا أجمل المشاريع العقارية التي تتميز بالتصاميم الحديثة والمواقع
+          الفريدة في مختلف المدن التركية.
         </p>
       </div>
 
@@ -97,11 +89,11 @@ export default function PropertyGallery() {
       {/* Subtitle */}
       <div className="text-center mt-16 mb-8 px-4">
         <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-          "Hayalinizdeki Eve Bir Adım Uzaktasınız"
+          "نحن هنا لتسهيل خطواتكم نحو الاستثمار في تركيا"
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          Uzman danışmanlarımız ile sizin için en uygun evi bulmanıza yardımcı
-          oluyoruz
+          نقدم لكم الدعم اللازم لاختيار المشروع الأنسب لكم في أجمل المناطق
+          التركية.
         </p>
       </div>
     </section>
@@ -111,7 +103,7 @@ export default function PropertyGallery() {
 // Property Card Component
 function PropertyCard({ property }) {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-xl group">
+    <div className="bg-white  overflow-hidden shadow-xl group">
       {/* Image Container */}
       <div className="relative h-[300px] overflow-hidden">
         <img
@@ -122,25 +114,20 @@ function PropertyCard({ property }) {
         <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300" />
 
         {/* Price Tag */}
-        <div className="absolute top-4 right-4 bg-white/90 text-black px-4 py-2 rounded-full font-semibold">
-          {property.price}
+        <div className="absolute top-4 right-4 bg-white/90 text-black px-4 py-2  font-semibold">
+          {property.city}
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
-          {property.city}
-        </h3>
-        <p className="text-gray-600 mb-4">{property.details}</p>
-
         {/* Action Buttons */}
         <div className="flex gap-2">
           <a
             href="/gallery"
             className="flex-1 bg-black text-white text-center py-2 rounded hover:bg-gray-800 transition-colors duration-300"
           >
-            Detaylar
+            تفاصيل
           </a>
         </div>
       </div>
