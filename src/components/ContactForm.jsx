@@ -201,12 +201,12 @@ export default function ContactForm() {
                 className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               >
                 <option value="">اختر عدد الغرف</option>
-                <option value="1+0">1+0</option>
-                <option value="1+1">1+1</option>
-                <option value="2+1">2+1</option>
-                <option value="3+1">3+1</option>
-                <option value="4+1">4+1</option>
-                <option value="5+1">5+1 أو أكثر</option>
+                <option value="1+0">١+٠</option>
+                <option value="1+1">١+١</option>
+                <option value="2+1">٢+١</option>
+                <option value="3+1">٣+١</option>
+                <option value="4+1">٤+١</option>
+                <option value="5+1">٥+١ أو أكثر</option>
               </select>
             </div>
 

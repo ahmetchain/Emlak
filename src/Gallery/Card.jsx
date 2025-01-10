@@ -1,5 +1,5 @@
 export default function Card({ image, info }) {
-  const { roomCount, propertyType, city, avgPrice, contactNumber } = info;
+  const { roomCount, propertyType, city, contactNumber } = info;
 
   return (
     <div className="bg-white  shadow-lg group overflow-hidden ">
@@ -16,9 +16,9 @@ export default function Card({ image, info }) {
           {roomCount} - {propertyType}
         </h3>
         {/* Şehir */}
-        <p className="text-sm text-gray-600 mb-2">Şehir: {city}</p>
+        <p className="text-sm text-gray-600 mb-2">المدينة: {city}</p>
         {/* İletişim */}
-        <p className="text-sm text-gray-600">İletişim: {contactNumber}</p>
+        <p className="text-sm text-gray-600">الاتصال: {contactNumber}</p>
       </div>
     </div>
   );

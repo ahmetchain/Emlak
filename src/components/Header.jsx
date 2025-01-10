@@ -6,7 +6,6 @@ import { BsWhatsapp } from "react-icons/bs";
 import { FiPhone, FiMail } from "react-icons/fi";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
-import { RiContactsLine } from "react-icons/ri";
 
 export default function Header({ page }) {
   const { scrolled, isVisible } = useScroll();
@@ -114,15 +113,6 @@ export default function Header({ page }) {
                 <MdOutlinePhotoLibrary />
                 <span>المعرض</span>
               </a>
-              <a
-                href="/contact"
-                className={`flex items-center gap-2 ${
-                  page === "home" && !scrolled ? "text-white" : "text-gray-800"
-                } hover:text-blue-600 transition-colors font-medium`}
-              >
-                <RiContactsLine />
-                <span>اتصل بنا</span>
-              </a>
             </div>
 
             {/* أزرار الاتصال لسطح المكتب */}
@@ -192,14 +182,6 @@ export default function Header({ page }) {
                 >
                   <MdOutlinePhotoLibrary className="text-xl" />
                   <span className="font-medium">المعرض</span>
-                </a>
-                <a
-                  href="/contact"
-                  className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <RiContactsLine className="text-xl" />
-                  <span className="font-medium">اتصل بنا</span>
                 </a>
               </div>
 
