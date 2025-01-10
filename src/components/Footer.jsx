@@ -23,17 +23,11 @@ export default function Footer() {
                   المعرض
                 </a>
               </li>
+
               <li>
                 <a
-                  href="#projelerimiz"
-                  className="hover:text-purple-500 transition-colors duration-200"
-                >
-                  الجنسية
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#bizeulasin"
+                  href="https://wa.me/905436535134"
+                  target="_blank"
                   className="hover:text-purple-500 transition-colors duration-200"
                 >
                   تواصل معنا
@@ -64,15 +58,14 @@ export default function Footer() {
         {/* Contact and Social Links */}
         <div>
           <h3 className="font-semibold text-lg mb-4 text-white">الاتصال</h3>
-          <p className="text-sm mb-2">الهاتف: +٩٠ (٢٣٢) ٢٢٠ ٠٢ ٠٠</p>
-          <p className="text-sm mb-4">الهاتف: +٩٠ (٢٣٢) ٥٠٣ ٠٥ ٠٥</p>
+          <p className="text-sm mb-2">الهاتف: +٩٠ ٥٤٣ ٦٥٣ ٥١ ٣٤</p>
           <p className="text-sm mb-4">
             البريد الإلكتروني:{" "}
             <a
-              href="mailto:info@omgroup.com.tr"
+              href="mailto:selim.safak11@gmail.com"
               className="hover:text-purple-500 transition-colors duration-200"
             >
-              info@omgroup.com.tr
+              selim.safak11@gmail.com
             </a>
           </p>
         </div>

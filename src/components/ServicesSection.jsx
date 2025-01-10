@@ -164,7 +164,8 @@ export default function ServicesSection() {
             هل ترغب في التواصل مع فريقنا المتخصص لتقييم أفضل فرص الاستثمار؟
           </p>
           <a
-            href="#iletisim"
+            href="https://wa.me/905436535134"
+            target="_blank"
             className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
           >
             احجز موعدًا

@@ -22,7 +22,7 @@ export default function Header({ page }) {
       >
         <div className="container mx-auto px-4 flex justify-end items-center gap-6">
           <a
-            href="https://wa.me/966555555555"
+            href="https://wa.me/905436535134"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors text-sm"
@@ -31,18 +31,18 @@ export default function Header({ page }) {
             <span>واتساب</span>
           </a>
           <a
-            href="tel:+966555555555"
+            href="tel:+905436535134"
             className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm"
           >
             <FiPhone />
-            <span>+٩٦٦ ٥٥٥ ٥٥٥ ٥٥٥</span>
+            <span>+٩٠ ٥٤٣ ٦٥٣ ٥١ ٣٤</span>
           </a>
           <a
-            href="mailto:info@example.com"
+            href="mailto:selim.safak11@gmail.com"
             className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors text-sm"
           >
             <FiMail />
-            <span>info@example.com</span>
+            <span>selim.safak11@gmail.com</span>
           </a>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function Header({ page }) {
             {/* رموز الاتصال للموبايل */}
             <div className="md:hidden flex items-center gap-4">
               <a
-                href="https://wa.me/966555555555"
+                href="https://wa.me/905436535134"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-green-600 transition-colors"
@@ -81,13 +81,13 @@ export default function Header({ page }) {
                 <BsWhatsapp className="text-xl" />
               </a>
               <a
-                href="tel:+966555555555"
+                href="tel:+905436535134"
                 className="text-gray-800 hover:text-blue-600 transition-colors"
               >
                 <FiPhone className="text-xl" />
               </a>
               <a
-                href="mailto:info@example.com"
+                href="mailto:selim.safak11@gmail.com"
                 className="text-gray-800 hover:text-red-600 transition-colors"
               >
                 <FiMail className="text-xl" />
@@ -128,14 +128,14 @@ export default function Header({ page }) {
             {/* أزرار الاتصال لسطح المكتب */}
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="tel:+966555555555"
+                href="tel:+905436535134"
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
               >
                 <FiPhone />
                 <span>اتصل بنا</span>
               </a>
               <a
-                href="https://wa.me/966555555555"
+                href="https://wa.me/905436535134"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
@@ -206,14 +206,14 @@ export default function Header({ page }) {
               {/* أزرار الاتصال للموبايل */}
               <div className="space-y-3">
                 <a
-                  href="tel:+966555555555"
+                  href="tel:+905436535134"
                   className="flex items-center gap-2 w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   <FiPhone />
                   <span>اتصل بنا</span>
                 </a>
                 <a
-                  href="https://wa.me/966555555555"
+                  href="https://wa.me/905436535134"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 w-full px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
@@ -222,7 +222,7 @@ export default function Header({ page }) {
                   <span>واتساب</span>
                 </a>
                 <a
-                  href="mailto:info@example.com"
+                  href="mailto:selim.safak11@gmail.com"
                   className="flex items-center gap-2 w-full px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   <FiMail />

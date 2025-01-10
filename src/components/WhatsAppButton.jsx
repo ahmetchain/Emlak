@@ -38,7 +38,7 @@ export default function WhatsAppButton() {
             استفساراتكم وتوفير المعلومات اللازمة.
           </p>
           <a
-            href="https://wa.me/901234567890"
+            href="https://wa.me/905436535134"
             className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full shadow transition-all duration-300"
             target="_blank"
             rel="noopener noreferrer"

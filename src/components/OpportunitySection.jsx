@@ -85,7 +85,8 @@ export default function OpportunitySection() {
         </div>
 
         <a
-          href="#iletisim"
+          href="https://wa.me/905436535134"
+          target="_blank"
           className="flex items-center justify-center w-[200px] h-[60px] bg-black text-white text-lg font-semibold text-center transition-all duration-300 mt-8 hover:bg-black/90"
         >
           تواصل معنا
