@@ -10,22 +10,18 @@ export default function PropertyGallery() {
     {
       id: 1,
       image: İzmir,
-      city: "İzmir",
     },
     {
       id: 2,
       image: İzmir,
-      city: "İstanbul",
     },
     {
       id: 3,
       image: İzmir,
-      city: "Antalya",
     },
     {
       id: 4,
       image: İzmir,
-      city: "Muğla",
     },
   ];
 
@@ -110,12 +106,7 @@ function PropertyCard({ property }) {
           alt={property.city}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors duration-300" />
-
-        {/* Price Tag */}
-        <div className="absolute top-4 right-4 bg-white/90 text-black px-4 py-2  font-semibold">
-          {property.city}
-        </div>
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
       </div>
 
       {/* Content */}

@@ -12,11 +12,8 @@ export default function Card({ image, info }) {
       {/* Bilgi */}
       <div className="p-4">
         {/* Oda Sayısı ve Konut Tipi */}
-        <h3 className="text-lg font-bold text-gray-800">
-          {roomCount} - {propertyType}
-        </h3>
+        <h3 className="text-lg font-bold text-gray-800">{propertyType}</h3>
         {/* Şehir */}
-        <p className="text-sm text-gray-600 mb-2">المدينة: {city}</p>
         {/* İletişim */}
         <p className="text-sm text-gray-600">الاتصال: {contactNumber}</p>
       </div>
