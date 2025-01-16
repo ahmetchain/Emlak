@@ -6,6 +6,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { FiPhone, FiMail } from "react-icons/fi";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
+import logo from "../assets/logo.png";
 
 export default function Header({ page }) {
   const { scrolled, isVisible } = useScroll();
@@ -58,15 +59,7 @@ export default function Header({ page }) {
           <div className="flex justify-between items-center">
             {/* الشعار */}
             <div className="flex items-center">
-              <h1
-                className={`text-2xl font-bold ${
-                  page === "home" && !scrolled && !isMobileMenuOpen
-                    ? "md:text-white text-gray-800"
-                    : "text-gray-800"
-                }`}
-              >
-                شعار العقار
-              </h1>
+              <img src={logo} alt="Logo" className="h-12 w-auto" />
             </div>
 
             {/* رموز الاتصال للموبايل */}
