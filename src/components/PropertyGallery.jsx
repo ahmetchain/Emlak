@@ -4,24 +4,33 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import İzmir from "../assets/izmir.jpg";
+import mustakil from "../assets/mustakil/mustakil.webp";
+import villa from "../assets/villa/villa.webp";
+import rezidans from "../assets/rezidans/rezidans.jpg";
+import rezidans1 from "../assets/rezidans/rezidans1.jpg";
+import rezidans2 from "../assets/rezidans/rezidans2.jpg";
 
 export default function PropertyGallery() {
   const properties = [
     {
       id: 1,
-      image: İzmir,
+      image: mustakil,
     },
     {
       id: 2,
-      image: İzmir,
+      image: rezidans,
     },
     {
       id: 3,
-      image: İzmir,
+      image: villa,
     },
     {
       id: 4,
-      image: İzmir,
+      image: rezidans1,
+    },
+    {
+      id: 5,
+      image: rezidans2,
     },
   ];
 
