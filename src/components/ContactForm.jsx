@@ -58,8 +58,8 @@ export default function ContactForm() {
 
     try {
       const result = await emailjs.send(
-        "service_k8f768g",
-        "template_8g6cahl",
+        "service_5xul3qm",
+        "template_rp15hv8",
         {
           email: formData.email,
           cities: formData.cities.map((city) => city.label).join(", "),
@@ -70,7 +70,7 @@ export default function ContactForm() {
           maxPrice: formData.maxPrice,
           message: formData.message,
         },
-        "sjOLF11RAeO55h3uA"
+        "PyAgjoq9DC7mofLrP"
       );
 
       console.log("Email gönderim sonucu:", result.text);
