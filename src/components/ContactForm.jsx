@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function ContactForm() {
   // Şehir seçenekleri
@@ -48,10 +50,60 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    alert("تم إرسال طلبك بنجاح!");
+
+    // Loading toast
+    const loadingToast = toast.loading("جاري إرسال الطلب...");
+
+    try {
+      const result = await emailjs.send(
+        "service_k8f768g",
+        "template_8g6cahl",
+        {
+          email: formData.email,
+          cities: formData.cities.map((city) => city.label).join(", "),
+          propertyType: formData.propertyType,
+          roomCount: formData.roomCount,
+          statuses: formData.statuses.map((status) => status.label).join(", "),
+          minPrice: formData.minPrice,
+          maxPrice: formData.maxPrice,
+          message: formData.message,
+        },
+        "sjOLF11RAeO55h3uA"
+      );
+
+      console.log("Email gönderim sonucu:", result.text);
+      
+      // Başarılı toast
+      toast.success("تم إرسال طلبك بنجاح! سنتواصل معك قريباً", {
+        duration: 4000,
+        position: 'top-center',
+      });
+      
+      // Form'u sıfırla
+      setFormData({
+        email: "",
+        cities: [],
+        propertyType: "",
+        roomCount: "",
+        statuses: [],
+        minPrice: "",
+        maxPrice: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error("Email gönderim hatası:", error);
+      // Hata toast
+      toast.error("حدث خطأ. يرجى المحاولة مرة أخرى.", {
+        duration: 4000,
+        position: 'top-center',
+      });
+    } finally {
+      // Loading toast'u kaldır
+      toast.dismiss(loadingToast);
+    }
   };
 
   const customStyles = {
@@ -86,6 +138,7 @@ export default function ContactForm() {
 
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <Toaster />
       {/* Section Title */}
       <div className="text-center mb-12">
         <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-4">
