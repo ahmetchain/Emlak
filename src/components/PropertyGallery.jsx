@@ -3,12 +3,11 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import İzmir from "../assets/izmir.jpg";
-import mustakil from "../assets/mustakil/mustakil.webp";
-import villa from "../assets/villa/villa.webp";
-import rezidans from "../assets/rezidans/rezidans.jpg";
-import rezidans1 from "../assets/rezidans/rezidans1.jpg";
-import rezidans2 from "../assets/rezidans/rezidans2.jpg";
+import mustakil from "../assets/villa/10.jpeg";
+import villa from "../assets/villa/1.jpeg";
+import rezidans from "../assets/rezidans/5.jpg";
+import rezidans1 from "../assets/rezidans/7.jpg";
+import rezidans2 from "../assets/rezidans/9.jpg";
 
 export default function PropertyGallery() {
   const properties = [
