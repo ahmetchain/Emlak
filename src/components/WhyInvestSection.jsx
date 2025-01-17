@@ -5,43 +5,27 @@ import {
   Users,
   Building2,
   Handshake,
+  BadgeCheck,
+  TrendingUp,
 } from "lucide-react";
 
 export default function WhyInvestSection() {
   const reasons = [
     {
-      icon: <Shield size={32} />,
-      title: "دعم استثماري آمن",
-      description:
-        "نعمل كوسيط موثوق بينكم وبين وكلاء العقارات لضمان تحقيق متطلباتكم بدقة.",
+      icon: <Handshake size={40} />,
+      title: "سنكون بمثابة شريكك التجاري العقاري الموثوق به في تركيا.",
     },
     {
-      icon: <Award size={32} />,
-      title: "تواصل مع أفضل الوكلاء",
-      description:
-        "نقوم بالتنسيق مع وكلاء العقارات الذين تختارونهم لتلبية احتياجاتكم بشكل كامل.",
+      icon: <Shield size={40} />,
+      title: "هناك شخص يحاول العثور على الأفضل والأكثر ربحية بالنسبة لك",
     },
     {
-      icon: <Clock size={32} />,
-      title: "إجراءات سريعة وسهلة",
-      description: "نحرص على تسهيل جميع الإجراءات العقارية بسرعة وكفاءة.",
+      icon: <BadgeCheck size={40} />,
+      title: "سنعمل كموظفين عقاريين تثق بهم للعمل لديك في تركيا.",
     },
     {
-      icon: <Users size={32} />,
-      title: "شراكة موثوقة",
-      description:
-        "نحن شركاؤكم في جميع خطوات عملية الاستثمار، من البداية حتى النهاية.",
-    },
-    {
-      icon: <Building2 size={32} />,
-      title: "توفير الخيارات المثلى",
-      description:
-        "نساعدكم في العثور على أفضل العروض العقارية بما يتناسب مع متطلباتكم.",
-    },
-    {
-      icon: <Handshake size={32} />,
-      title: "التزامنا بالشفافية",
-      description: "نلتزم بالعمل بشفافية كاملة لضمان رضاكم التام.",
+      icon: <TrendingUp size={40} />,
+      title: "جميع عملياتنا مبنية على الثقة المتبادلة والحلال.",
     },
   ];
 
@@ -49,10 +33,10 @@ export default function WhyInvestSection() {
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       {/* Başlık Kısmı */}
       <div className="text-center mb-16 px-4">
-        <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-6">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
           لماذا تثق بنا؟
         </h2>
-        <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+        <p className="text-gray-600 text-xl max-w-3xl mx-auto">
           نحن هنا لتقديم الدعم الكامل كوسيط عقاري موثوق به في تركيا، مما يسهل
           عليكم جميع مراحل الاستثمار العقاري.
         </p>
@@ -60,20 +44,19 @@ export default function WhyInvestSection() {
 
       {/* Özellikler Grid */}
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-black/5 p-4 rounded-full mb-6">
+              <div className="flex items-center gap-6">
+                <div className="bg-black/5 p-4 rounded-full">
                   <div className="text-black">{reason.icon}</div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+                <h3 className="text-xl font-bold text-gray-800 flex-1">
                   {reason.title}
                 </h3>
-                <p className="text-gray-600">{reason.description}</p>
               </div>
             </div>
           ))}
@@ -81,14 +64,15 @@ export default function WhyInvestSection() {
 
         {/* Alt Kısım CTA */}
         <div className="text-center mt-16">
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-2xl text-gray-700 mb-8 max-w-2xl mx-auto font-medium">
             نحن هنا لدعمكم خلال جميع مراحل استثماراتكم العقارية وضمان تحقيق
             أهدافكم بكل ثقة.
           </p>
           <a
             href="https://wa.me/905436535134"
-              target="_blank"
-            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 bg-black text-white text-lg font-semibold  hover:bg-black/90 transition-all duration-300"
           >
             تواصل معنا
           </a>

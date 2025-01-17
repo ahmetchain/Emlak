@@ -6,7 +6,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { FiPhone, FiMail } from "react-icons/fi";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo/log.svg";
 
 export default function Header({ page }) {
   const { scrolled, isVisible } = useScroll();
@@ -59,7 +59,7 @@ export default function Header({ page }) {
           <div className="flex justify-between items-center">
             {/* الشعار */}
             <div className="flex items-center">
-              <img src={logo} alt="Logo" className="h-12 w-auto" />
+              <img  src={logo} alt="Logo" className="h-12 w-auto" />
             </div>
 
             {/* رموز الاتصال للموبايل */}
