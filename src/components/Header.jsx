@@ -7,6 +7,7 @@ import { FiPhone, FiMail } from "react-icons/fi";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
 import logo from "../assets/logo/log.svg";
+import log from "../assets/logo/logo.png"
 
 export default function Header({ page }) {
   const { scrolled, isVisible } = useScroll();
@@ -59,7 +60,7 @@ export default function Header({ page }) {
           <div className="flex justify-between items-center">
             {/* الشعار */}
             <div className="flex items-center">
-              <img  src={logo} alt="Logo" className="h-12 w-auto" />
+              <img  src={log} alt="Logo" className="h-12 w-auto" />
             </div>
 
             {/* رموز الاتصال للموبايل */}
