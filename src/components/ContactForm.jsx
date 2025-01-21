@@ -22,6 +22,7 @@ export default function ContactForm() {
 
   const [formData, setFormData] = useState({
     email: "",
+    phoneNumber: "",
     cities: [],
     propertyType: "",
     roomCount: "",
@@ -62,6 +63,7 @@ export default function ContactForm() {
         "template_rp15hv8",
         {
           email: formData.email,
+          phoneNumber: formData.phoneNumber,
           cities: formData.cities.map((city) => city.label).join(", "),
           propertyType: formData.propertyType,
           roomCount: formData.roomCount,
@@ -84,6 +86,7 @@ export default function ContactForm() {
       // Form'u sıfırla
       setFormData({
         email: "",
+        phoneNumber: "",
         cities: [],
         propertyType: "",
         roomCount: "",
@@ -168,6 +171,22 @@ export default function ContactForm() {
               onChange={handleInputChange}
               className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
               placeholder="example@email.com"
+              required
+            />
+          </div>
+
+          {/* Telefon Numarası - Yeni Eklenen Alan */}
+          <div className="col-span-1 md:col-span-2">
+            <label className="block text-gray-700 font-semibold mb-2">
+              رقم الهاتف <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+              className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              placeholder="+90 XXX XXX XX XX"
               required
             />
           </div>
