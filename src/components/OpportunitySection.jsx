@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Ev3 from "../assets/Basliksiz-1-1.png";
 import { ChevronDown, ChevronUp } from "lucide-react";
-
+import Ev from "../assets/logo/gg.jpg";
 export default function OpportunitySection() {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -23,7 +23,7 @@ export default function OpportunitySection() {
     <section className="flex flex-col lg:flex-row items-center justify-center gap-8 py-16">
       <div className="w-full lg:w-1/2">
         <img
-          src={Ev3}
+          src={Ev}
           alt="فرصة"
           className="w-full h-auto object-cover object-center"
         />
