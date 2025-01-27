@@ -15,7 +15,6 @@ export default function Header({ page }) {
 
   return (
     <>
-      {/* شريط الاتصال العلوي */}
       <div
         className={`hidden md:block w-full bg-gray-100 py-2 transition-transform duration-300 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
@@ -60,7 +59,7 @@ export default function Header({ page }) {
           <div className="flex justify-between items-center">
             {/* الشعار */}
             <div className="flex items-center">
-              <img  src={log} alt="Logo" className="h-12 w-auto" />
+              <img  src={log} alt="Logo" className="h-8 w-auto" />
             </div>
 
             {/* رموز الاتصال للموبايل */}

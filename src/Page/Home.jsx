@@ -9,6 +9,7 @@ import ServicesSection from "../components/ServicesSection";
 import WhatsAppButton from "../components/WhatsAppButton";
 import WhyInvestSection from "../components/WhyInvestSection";
 import AboutSectiontwo from "../components/AbboutSectiontwo";
+import LandSalesSection from "../components/LandSalesSection";
 export default function Home() {
   return (
     <>
@@ -23,6 +24,7 @@ export default function Home() {
         <WhyInvestSection />
         <PropertyGallery />
         <ContactForm />
+        <LandSalesSection />
         <Footer />
       </div>
     </>
