@@ -2,6 +2,7 @@ import { useState } from "react";
 import Select from "react-select";
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   // Şehir seçenekleri
@@ -139,32 +140,87 @@ export default function ContactForm() {
     }),
   };
 
+  const formAnimation = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="py-16 bg-gradient-to-b from-gray-50 to-white"
+    >
       <Toaster />
       {/* Section Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-4">
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <motion.h2 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-3xl lg:text-5xl font-bold text-gray-800 mb-4"
+        >
           البحث عن عقار يناسبك
-        </h2>
-        <p className="sm:text-lg px-3 pt-2 text-gray-600 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="sm:text-lg px-3 pt-2 text-gray-600 max-w-2xl mx-auto"
+        >
           املأ النموذج للعثور على المنزل الذي تحلم به، وسنتواصل معك لتقديم
           الخيارات المناسبة.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* Form */}
-      <div className="max-w-4xl mx-auto bg-white p-8 shadow-lg">
+      <motion.div 
+        variants={formAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto bg-white p-8 shadow-lg"
+      >
         <form
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           {/* Email */}
-          <div className="col-span-1 md:col-span-2">
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2"
+          >
             <label className="block text-gray-700 font-semibold mb-2">
               بريدك الإلكتروني <span className="text-red-500">*</span>
             </label>
-            <input
+            <motion.input
+              whileFocus={{ scale: 1.01 }}
               type="email"
               name="email"
               value={formData.email}
@@ -173,14 +229,18 @@ export default function ContactForm() {
               placeholder="example@email.com"
               required
             />
-          </div>
+          </motion.div>
 
-          {/* Telefon Numarası - Yeni Eklenen Alan */}
-          <div className="col-span-1 md:col-span-2">
+          {/* Phone Number */}
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2"
+          >
             <label className="block text-gray-700 font-semibold mb-2">
               رقم الهاتف <span className="text-red-500">*</span>
             </label>
-            <input
+            <motion.input
+              whileFocus={{ scale: 1.01 }}
               type="tel"
               name="phoneNumber"
               value={formData.phoneNumber}
@@ -189,10 +249,13 @@ export default function ContactForm() {
               placeholder="+90 XXX XXX XX XX"
               required
             />
-          </div>
+          </motion.div>
 
-          {/* Şehir Seçimi */}
-          <div className="col-span-1 md:col-span-2">
+          {/* Cities */}
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2"
+          >
             <label className="block text-gray-700 font-semibold mb-2">
               المدن (اختياري)
             </label>
@@ -219,16 +282,20 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-gray-500">
               يمكنك اختيار أكثر من مدينة
             </p>
-          </div>
+          </motion.div>
 
-          {/* Sol Kolon */}
-          <div className="space-y-6">
-            {/* Konut Tipi */}
+          {/* Left Column */}
+          <motion.div 
+            variants={itemAnimation}
+            className="space-y-6"
+          >
+            {/* Property Type */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
                 نوع العقار (اختياري)
               </label>
-              <select
+              <motion.select
+                whileFocus={{ scale: 1.01 }}
                 name="propertyType"
                 value={formData.propertyType}
                 onChange={handleInputChange}
@@ -240,15 +307,16 @@ export default function ContactForm() {
                 <option value="Office">مكتب</option>
                 <option value="Land">أرض</option>
                 <option value="Shop">محل تجاري</option>
-              </select>
+              </motion.select>
             </div>
 
-            {/* Minimum Fiyat */}
+            {/* Min Price */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
                 الحد الأدنى للسعر (اختياري)
               </label>
-              <input
+              <motion.input
+                whileFocus={{ scale: 1.01 }}
                 type="number"
                 name="minPrice"
                 value={formData.minPrice}
@@ -257,16 +325,20 @@ export default function ContactForm() {
                 placeholder="﷼"
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* Sağ Kolon */}
-          <div className="space-y-6">
-            {/* Oda Sayısı */}
+          {/* Right Column */}
+          <motion.div 
+            variants={itemAnimation}
+            className="space-y-6"
+          >
+            {/* Room Count */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
                 عدد الغرف (اختياري)
               </label>
-              <select
+              <motion.select
+                whileFocus={{ scale: 1.01 }}
                 name="roomCount"
                 value={formData.roomCount}
                 onChange={handleInputChange}
@@ -279,15 +351,16 @@ export default function ContactForm() {
                 <option value="3+1">٣+١</option>
                 <option value="4+1">٤+١</option>
                 <option value="5+1">٥+١ أو أكثر</option>
-              </select>
+              </motion.select>
             </div>
 
-            {/* Maksimum Fiyat */}
+            {/* Max Price */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
                 الحد الأقصى للسعر (اختياري)
               </label>
-              <input
+              <motion.input
+                whileFocus={{ scale: 1.01 }}
                 type="number"
                 name="maxPrice"
                 value={formData.maxPrice}
@@ -296,10 +369,13 @@ export default function ContactForm() {
                 placeholder="﷼"
               />
             </div>
-          </div>
+          </motion.div>
 
-          {/* Durum */}
-          <div className="col-span-1 md:col-span-2">
+          {/* Status */}
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2"
+          >
             <label className="block text-gray-700 font-semibold mb-2">
               الحالة (اختياري)
             </label>
@@ -326,33 +402,42 @@ export default function ContactForm() {
             <p className="mt-1 text-sm text-gray-500">
               يمكنك اختيار أكثر من حالة
             </p>
-          </div>
+          </motion.div>
 
-          {/* Mesaj */}
-          <div className="col-span-1 md:col-span-2">
+          {/* Message */}
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2"
+          >
             <label className="block text-gray-700 font-semibold mb-2">
               رسالتك الخاصة (اختياري)
             </label>
-            <textarea
+            <motion.textarea
+              whileFocus={{ scale: 1.01 }}
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               className="w-full p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all min-h-[120px]"
               placeholder="يمكنك كتابة ملاحظات إضافية هنا..."
             />
-          </div>
+          </motion.div>
 
-          {/* Gönder Butonu */}
-          <div className="col-span-1 md:col-span-2 text-center">
-            <button
+          {/* Submit Button */}
+          <motion.div 
+            variants={itemAnimation}
+            className="col-span-1 md:col-span-2 text-center"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="submit"
               className="w-full md:w-auto px-6 py-3 bg-black text-white text-lg font-semibold hover:bg-black/90 transition-all duration-300"
             >
               أرسل الطلب
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </form>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

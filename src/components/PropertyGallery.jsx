@@ -8,6 +8,7 @@ import villa from "../assets/villa/1.jpeg";
 import rezidans from "../assets/rezidans/5.jpg";
 import rezidans1 from "../assets/rezidans/7.jpg";
 import rezidans2 from "../assets/rezidans/9.jpg";
+import { motion } from "framer-motion";
 
 export default function PropertyGallery() {
   const properties = [
@@ -34,20 +35,50 @@ export default function PropertyGallery() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-[#1b1b1b] to-[#2d2d2d]">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="py-16 bg-gradient-to-b from-[#1b1b1b] to-[#2d2d2d]"
+    >
       {/* Section Title */}
-      <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center mb-12 px-4"
+      >
+        <motion.h2 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-3xl lg:text-5xl font-bold text-white mb-4"
+        >
           أبرز مشاريع تركيا
-        </h2>
-        <p className="text-sm sm:text-lg text-gray-400 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-sm sm:text-lg text-gray-400 max-w-2xl mx-auto"
+        >
           اكتشفوا أجمل المشاريع العقارية التي تتميز بالتصاميم الحديثة والمواقع
           الفريدة في مختلف المدن التركية.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       {/* Desktop Gallery */}
-      <div className="hidden md:block px-4 lg:px-32">
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="hidden md:block px-4 lg:px-32"
+      >
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={30}
@@ -66,10 +97,16 @@ export default function PropertyGallery() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
 
       {/* Mobile Gallery */}
-      <div className="md:hidden px-4">
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="md:hidden px-4"
+      >
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={20}
@@ -87,29 +124,57 @@ export default function PropertyGallery() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
 
       {/* Subtitle */}
-      <div className="text-center mt-16 mb-8 px-4">
-        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mt-16 mb-8 px-4"
+      >
+        <motion.h2 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-3xl lg:text-4xl font-bold text-white mb-4"
+        >
           "نحن هنا لتسهيل خطواتكم نحو الاستثمار في تركيا"
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          viewport={{ once: true }}
+          className="text-gray-400 max-w-2xl mx-auto"
+        >
           نقدم لكم الدعم اللازم لاختيار المشروع الأنسب لكم في أجمل المناطق
           التركية.
-        </p>
-      </div>
-    </section>
+        </motion.p>
+      </motion.div>
+    </motion.section>
   );
 }
 
 // Property Card Component
 function PropertyCard({ property }) {
   return (
-    <div className="bg-white  overflow-hidden shadow-xl group">
+    <motion.div 
+      initial={{ scale: 0.9, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-white overflow-hidden shadow-xl group"
+    >
       {/* Image Container */}
       <div className="relative h-[300px] overflow-hidden">
-        <img
+        <motion.img
+          initial={{ scale: 1.2 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           src={property.image}
           alt={property.city}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -121,14 +186,16 @@ function PropertyCard({ property }) {
       <div className="p-6">
         {/* Action Buttons */}
         <div className="flex gap-2">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="/gallery"
             className="flex-1 bg-black text-white text-center py-2 rounded hover:bg-gray-800 transition-colors duration-300"
           >
             تفاصيل
-          </a>
+          </motion.a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

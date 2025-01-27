@@ -14,6 +14,7 @@ import {
   MapPin,
   ShoppingBag,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ServicesSection() {
   const services = [
@@ -110,46 +111,95 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-24 bg-gray-900">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="py-24 bg-gray-900"
+    >
       {/* Section Title */}
       <div className="container mx-auto px-4 mb-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <motion.h2 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-3xl lg:text-5xl font-bold text-white mb-6"
+          >
             خدماتنا المميزة
-          </h2>
-          <p className="text-gray-300 text-lg">
+          </motion.h2>
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-gray-300 text-lg"
+          >
             نقدم لكم خدمات حصرية ومميزة خلال عملية الاستثمار العقاري.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
 
       {/* Services List */}
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.id}
+              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className={`flex flex-col md:flex-row items-center gap-8 py-12 ${
                 index !== services.length - 1 ? "border-b border-gray-800" : ""
               }`}
             >
               {/* Icon */}
-              <div className={`w-16 h-16 flex items-center justify-center ${service.color} rounded-full shrink-0`}>
+              <motion.div 
+                whileHover={{ scale: 1.1 }}
+                className={`w-16 h-16 flex items-center justify-center ${service.color} rounded-full shrink-0`}
+              >
                 <div className="">{service.icon}</div>
-              </div>
+              </motion.div>
 
               {/* Content */}
               <div className="text-center md:text-left">
-                <h3 className="text-xl font-bold text-white mb-2">
+                <motion.h3 
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-xl font-bold text-white mb-2"
+                >
                   {service.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed max-w-2xl">
+                </motion.h3>
+                <motion.p 
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-gray-300 leading-relaxed max-w-2xl"
+                >
                   {service.description}
-                </p>
+                </motion.p>
               </div>
 
-              {/* Arrow Icon - Optional */}
-              <div className="hidden md:flex flex-1 justify-end">
+              {/* Arrow Icon */}
+              <motion.div 
+                initial={{ x: 20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="hidden md:flex flex-1 justify-end"
+              >
                 <div className="w-8 h-8 flex items-center justify-center text-gray-500">
                   <svg
                     className="w-5 h-5"
@@ -165,25 +215,39 @@ export default function ServicesSection() {
                     />
                   </svg>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
         {/* Alt Kısım */}
-        <div className="max-w-3xl mx-auto text-center mt-20">
-          <p className="text-xl text-gray-300 mb-8">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mt-20"
+        >
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-300 mb-8"
+          >
             هل ترغب في التواصل مع فريقنا المتخصص لتقييم أفضل فرص الاستثمار؟
-          </p>
-          <a
+          </motion.p>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="https://wa.me/905436535134"
             target="_blank"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 text-lg font-semibold hover:bg-gray-100 transition-all duration-300"
           >
             احجز موعدًا
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

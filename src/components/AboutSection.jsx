@@ -1,4 +1,5 @@
 import { Building2, Target, Users2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   const stats = [
@@ -20,19 +21,42 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="py-24 bg-gradient-to-b from-white to-gray-50"
+    >
       <div className="container mx-auto px-4">
-        {/* Üst Kısım */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8">
+        <motion.div 
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <motion.h2 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-8"
+          >
             من <span className="text-black italic">نحن؟</span>
-          </h2>
-          <p className="text-xl text-gray-700 italic">
+          </motion.h2>
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-700 italic"
+          >
             "نحن نعمل كمستشار موثوق ومحترف لمساعدة عملائنا الكويتيين الراغبين في
             شراء منزل في تركيا. هدفنا هو مساعدتكم في العثور على المنزل الأنسب
             لاحتياجاتكم بكل سهولة وثقة."
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* İstatistikler */}
         {/* 
@@ -62,6 +86,6 @@ export default function AboutSection() {
         {/* Alt Kısım - Misyon */}
         <div className="max-w-3xl mx-auto text-center mt-16"></div>
       </div>
-    </section>
+    </motion.section>
   );
 }
