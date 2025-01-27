@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Block access from Turkey
+User-agent: *
+Disallow: /
+From: .tr
+
+# Allow specific countries
+User-agent: *
+Allow: /
+From: .qa    # Qatar
+From: .sa    # Saudi Arabia
+From: .kw    # Kuwait
+
+Sitemap: https://www.xn--mgbaaajebb4ak2av7pmatdfo7dybbcd.com/sitemap.xml 
