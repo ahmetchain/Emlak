@@ -4,6 +4,23 @@
         "source": "/(.*)",
         "destination": "/index.html"
       }
+    ],
+    "routes": [
+      {
+        "src": "/sitemap.xml",
+        "dest": "/sitemap.xml"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/xml"
+          }
+        ]
+      }
     ]
   }
   
