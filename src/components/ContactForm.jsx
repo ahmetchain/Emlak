@@ -78,6 +78,13 @@ export default function ContactForm() {
 
       console.log("Email gönderim sonucu:", result.text);
       
+      // Google Ads dönüşüm takibi
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17399811221/I3rnCMPvnPkaEJWZ8OhA'
+        });
+      }
+      
       // Başarılı toast
       toast.success("تم إرسال طلبك بنجاح! سنتواصل معك قريباً", {
         duration: 4000,
