@@ -71,50 +71,26 @@ export default function PropertyGallery() {
         </motion.p>
       </motion.div>
 
-      {/* Desktop Gallery */}
-      <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }}
+      {/* Responsive Gallery – single Swiper with breakpoints */}
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="hidden md:block px-4 lg:px-32"
+        className="px-4 lg:px-32"
       >
         <Swiper
           modules={[Autoplay, Navigation, Pagination]}
-          spaceBetween={30}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          className="mySwiper"
-        >
-          {properties.map((property) => (
-            <SwiperSlide key={property.id}>
-              <PropertyCard property={property} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </motion.div>
-
-      {/* Mobile Gallery */}
-      <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="md:hidden px-4"
-      >
-        <Swiper
-          modules={[Autoplay, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
+          navigation
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
           }}
           className="mySwiper"
         >

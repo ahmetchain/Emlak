@@ -98,13 +98,13 @@ export default function Header({ page }) {
                 <span>الرئيسية</span>
               </a>
               <a
-                href="/gallery"
+                href="/projects"
                 className={`flex items-center gap-2 ${
                   page === "home" && !scrolled ? "text-white" : "text-gray-800"
                 } hover:text-blue-600 transition-colors font-medium`}
               >
                 <MdOutlinePhotoLibrary />
-                <span>المعرض</span>
+                <span>المشاريع</span>
               </a>
             </div>
 
@@ -169,12 +169,12 @@ export default function Header({ page }) {
                   <span className="font-medium">الرئيسية</span>
                 </a>
                 <a
-                  href="/gallery"
+                  href="/projects"
                   className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <MdOutlinePhotoLibrary className="text-xl" />
-                  <span className="font-medium">المعرض</span>
+                  <span className="font-medium">المشاريع</span>
                 </a>
               </div>
 

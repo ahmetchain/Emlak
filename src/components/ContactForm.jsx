@@ -212,7 +212,7 @@ export default function ContactForm() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto bg-white p-8 shadow-lg"
+        className="max-w-4xl mx-auto bg-white p-4 sm:p-8 shadow-lg"
       >
         <form
           onSubmit={handleSubmit}

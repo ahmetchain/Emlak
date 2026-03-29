@@ -1,88 +1,183 @@
+import { useRef, useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-import Banner from "../assets/herosection.jpg";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { gsap } from "gsap";
 
-export default function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
+import "swiper/css";
+import "swiper/css/navigation";
+
+import KaydirSVG from "../assets/logo/kaydir.svg";
+
+// Ordered as requested — all served from /public/videos/
+const SLIDES = [
+  { id: 1, src: "/videos/polatleventexclusive.mp4", title: "بولات ليفنت إكسكلوسيف" },
+  { id: 2, src: "/videos/veluxyalikavak.mp4",        title: "فيلوكس يالي كاواك" },
+  { id: 3, src: "/videos/folkartorion.mp4",           title: "فولكارت أوريون" },
+  { id: 4, src: "/videos/woxyalikavak.mp4",           title: "واكس يالي كاواك" },
+  { id: 5, src: "/videos/seapearlatakoy.mp4",         title: "سي بيرل أتاكوي" },
+  { id: 6, src: "/videos/folkartnova.mp4",            title: "فولكارت نوفا" },
+  { id: 7, src: "/videos/folkartmona.mp4",            title: "فولكارت مونا" },
+];
+
+// Shown only on the first slide with GSAP-driven swipe animation
+function SwipeIndicator({ visible }) {
+  const imgRef = useRef(null);
+  const tlRef = useRef(null);
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+    if (!visible || !imgRef.current) return;
+    tlRef.current = gsap.timeline({ repeat: -1, repeatDelay: 0.9 })
+      .fromTo(imgRef.current,
+        { x: 14, opacity: 0.5 },
+        { x: -14, opacity: 1, duration: 1.8, ease: "power1.inOut" }
+      );
+    return () => tlRef.current?.kill();
+  }, [visible]);
 
   return (
-    <main className="relative w-full h-[100vh] mb-20 overflow-hidden">
-      {/* Background Overlay with Smooth Animation */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10 z-10"
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          key="swipe-indicator"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 8 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-30 pointer-events-none select-none"
+        >
+          <img
+            ref={imgRef}
+            src={KaydirSVG}
+            alt="swipe"
+            className="w-16 h-16 sm:w-20 sm:h-20"
+            style={{ filter: "brightness(0) invert(1)", willChange: "transform" }}
           />
-        )}
-      </AnimatePresence>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
 
-      {/* Arkaplan görsel */}
-      <motion.img
-        initial={{ scale: 1.2, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        src={Banner}
-        alt="Emlak Hero Section Banner"
-        className="w-full h-full object-cover object-center"
-      />
+export default function HeroSection() {
+  const swiperRef = useRef(null);
+  const [isFirstSlide, setIsFirstSlide] = useState(true);
 
-      {/* İçerik */}
-      <div className="absolute inset-0 flex items-center justify-start">
-        <div className="max-w-[1000px] px-5 sm:px-10 lg:mx-[88px]">
-          {/* Siyah arka plan ile yazıyı öne çıkar */}
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="bg-black/75 p-4 sm:p-6 lg:p-10 shadow-lg rounded-lg"
-          >
-            {/* Başlık */}
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight sm:leading-snug"
-            >
-              حياة فاخرة بانتظارك في تركيا...
-            </motion.h1>
+  // Lazy-load video → only fetch when the slide becomes active
+  const activateSlide = useCallback((swiper) => {
+    if (!swiper) return;
 
-            {/* Alt Başlık */}
-            <motion.h2
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-200 mb-8 leading-relaxed"
-            >
-              بالنسبة للمستثمرين من قطر، الكويت، والمملكة العربية السعودية، نقوم
-              بمعاينة المنازل في تركيا التي تناسب احتياجاتكم ونوفر لكم تجربة
-              شراء سلسة ومريحة.
-            </motion.h2>
+    // Pause & reset all videos
+    document.querySelectorAll(".hero-video").forEach((v) => {
+      v.pause();
+      v.currentTime = 0;
+    });
 
-            {/* Butonlar */}
-            {/* <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                className="font-semibold px-6 py-3 bg-black hover:bg-black/90 text-white text-sm sm:text-base md:text-lg transition-all duration-300 ease-in-out shadow-lg rounded-lg"
-                href="#iletisim"
-              >
-                Bizimle İletişime Geçin
-              </a>
-              <a
-                className="px-6 py-3 bg-gray-600 hover:bg-gray-500 text-white text-sm sm:text-base md:text-lg transition-all duration-300 ease-in-out shadow-lg rounded-lg"
-                href="#detayli-bilgi"
-              >
-                Detaylı Bilgi Alın
-              </a>
-            </div> */}
-          </motion.div>
-        </div>
-      </div>
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    if (!activeSlide) return;
+
+    // Load video src on demand (lazy)
+    const vid = activeSlide.querySelector(".hero-video");
+    if (vid?.dataset.src && !vid.dataset.loaded) {
+      vid.src = vid.dataset.src;
+      vid.load();
+      vid.dataset.loaded = "1";
+    }
+    vid?.play().catch(() => {});
+
+    // GSAP entrance for title
+    const title = activeSlide.querySelector(".hero-title");
+    if (title) {
+      gsap.killTweensOf(title);
+      gsap.fromTo(title,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", delay: 0.1 }
+      );
+    }
+
+    // GSAP entrance for button (staggered after title)
+    const btn = activeSlide.querySelector(".hero-btn");
+    if (btn) {
+      gsap.killTweensOf(btn);
+      gsap.fromTo(btn,
+        { y: 22, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.65, ease: "power2.out", delay: 0.45 }
+      );
+    }
+  }, []);
+
+  const handleVideoEnd = useCallback(() => {
+    swiperRef.current?.slideNext();
+  }, []);
+
+  const handleSlideChange = useCallback((swiper) => {
+    setIsFirstSlide(swiper.realIndex === 0);
+  }, []);
+
+  // Trigger first slide on mount
+  useEffect(() => {
+    const t = setTimeout(() => {
+      if (swiperRef.current) activateSlide(swiperRef.current);
+    }, 150);
+    return () => clearTimeout(t);
+  }, [activateSlide]);
+
+  return (
+    <main className="relative w-full h-[100dvh] overflow-hidden">
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        loop={true}
+        speed={900}
+        grabCursor
+        touchRatio={1}
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        onSlideChange={handleSlideChange}
+        onSlideChangeTransitionEnd={activateSlide}
+        className="w-full h-full hero-swiper"
+      >
+        {SLIDES.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="relative w-full h-full">
+              {/* Lazy-loaded video — src set on demand via data-src */}
+              <video
+                className="hero-video w-full h-full object-cover"
+                data-src={slide.src}
+                muted
+                playsInline
+                preload="none"
+                onEnded={handleVideoEnd}
+              />
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-black/65 z-10" />
+
+              {/* Content — animated by GSAP per slide, starts invisible */}
+              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-7 sm:gap-10 px-5 text-center">
+                <h1
+                  className="hero-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-snug drop-shadow-2xl tracking-wide"
+                  style={{ opacity: 0 }}
+                >
+                  {slide.title}
+                </h1>
+
+                <div className="hero-btn" style={{ opacity: 0 }}>
+                  <Link
+                    to={`/project/${slide.id}`}
+                    className="inline-block px-10 sm:px-14 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/50 hover:bg-white hover:text-black text-white font-semibold text-base sm:text-lg tracking-widest transition-all duration-300"
+                  >
+                    تفاصيل
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Finger swipe indicator — first slide only */}
+      <SwipeIndicator visible={isFirstSlide} />
     </main>
   );
 }

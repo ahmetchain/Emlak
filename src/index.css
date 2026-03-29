@@ -2,11 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent horizontal overflow from animations */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Swiper Custom Styles */
 .swiper-pagination-bullet {
-    background: white !important;
+  width: 10px !important;
+  height: 10px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 32px !important;
+  border-radius: 6px !important;
+  background: white !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.5) !important;
+  transform: scale(1.1) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* Mobile: hide nav arrows in hero (users swipe with finger), keep pagination */
+@media (max-width: 767px) {
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev {
+    display: none !important;
   }
-  
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: white !important;
+}
+
+/* Meraas-style gallery swiper — white circle arrows, no dots */
+.meraas-gallery-swiper .swiper-button-next,
+.meraas-gallery-swiper .swiper-button-prev {
+  width: 52px !important;
+  height: 52px !important;
+  background: white !important;
+  border-radius: 50% !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18) !important;
+  transition: all 300ms ease-in-out !important;
+}
+
+.meraas-gallery-swiper .swiper-button-next:hover,
+.meraas-gallery-swiper .swiper-button-prev:hover {
+  background: #1a1a1a !important;
+  color: white !important;
+}
+
+.meraas-gallery-swiper .swiper-button-next::after,
+.meraas-gallery-swiper .swiper-button-prev::after {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 767px) {
+  .meraas-gallery-swiper .swiper-button-next,
+  .meraas-gallery-swiper .swiper-button-prev {
+    display: none !important;
   }
+}

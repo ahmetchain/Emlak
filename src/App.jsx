@@ -1,63 +1,45 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Page/Home";
-import Gallery from "./Page/Gallery";
+import Projects from "./Page/Gallery";
+import ProjectDetail from "./Page/ProjectDetail";
 import { AnimatePresence, motion } from "framer-motion";
+
+const pageVariants = {
+  initial:  { opacity: 0, y: 20 },
+  animate:  { opacity: 1, y: 0 },
+  exit:     { opacity: 0, y: -10 },
+};
+
+const pageTransition = {
+  type: "tween",
+  ease: "easeOut",
+  duration: 0.35,
+};
+
+function Wrap({ children }) {
+  return (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 function AnimatedRoutes() {
   const location = useLocation();
 
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      x: -200
-    },
-    animate: {
-      opacity: 1,
-      x: 0
-    },
-    exit: {
-      opacity: 0,
-      x: 200
-    }
-  };
-
-  const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 0.5
-  };
-
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Home />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/gallery"
-          element={
-            <motion.div
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={pageVariants}
-              transition={pageTransition}
-            >
-              <Gallery />
-            </motion.div>
-          }
-        />
+        <Route path="/" element={<Wrap><Home /></Wrap>} />
+        <Route path="/projects" element={<Wrap><Projects /></Wrap>} />
+        <Route path="/gallery"  element={<Wrap><Projects /></Wrap>} />
+        <Route path="/project/:id" element={<Wrap><ProjectDetail /></Wrap>} />
       </Routes>
     </AnimatePresence>
   );

@@ -154,9 +154,9 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.25) }}
               viewport={{ once: true }}
               className={`flex flex-col md:flex-row items-center gap-8 py-12 ${
                 index !== services.length - 1 ? "border-b border-gray-800" : ""
@@ -171,20 +171,20 @@ export default function ServicesSection() {
               </motion.div>
 
               {/* Content */}
-              <div className="text-center md:text-left">
-                <motion.h3 
-                  initial={{ y: 20, opacity: 0 }}
+              <div className="text-center md:text-right">
+                <motion.h3
+                  initial={{ y: 15, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
                   viewport={{ once: true }}
                   className="text-xl font-bold text-white mb-2"
                 >
                   {service.title}
                 </motion.h3>
-                <motion.p 
-                  initial={{ y: 20, opacity: 0 }}
+                <motion.p
+                  initial={{ y: 15, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.4, delay: 0.15 }}
                   viewport={{ once: true }}
                   className="text-gray-300 leading-relaxed max-w-2xl"
                 >
@@ -193,10 +193,10 @@ export default function ServicesSection() {
               </div>
 
               {/* Arrow Icon */}
-              <motion.div 
-                initial={{ x: 20, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="hidden md:flex flex-1 justify-end"
               >
