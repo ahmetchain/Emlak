@@ -13,7 +13,7 @@ export default function LoadingScreen({ onDone }) {
 
     const id = setInterval(() => {
       step++;
-      const t = step / steps;
+      const t = Math.min(1, step / steps);
       const eased = 1 - Math.pow(1 - t, 2.5);
       setProgress(Math.min(100, Math.round(eased * 100)));
 
