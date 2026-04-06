@@ -1,219 +1,133 @@
-import React, { useState } from "react";
-import useScroll from "../Hooks/useScroll";
-import { HiMenu } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
-import { BsWhatsapp } from "react-icons/bs";
-import { FiPhone, FiMail } from "react-icons/fi";
-import { BiHomeAlt } from "react-icons/bi";
-import { MdOutlinePhotoLibrary } from "react-icons/md";
-import logo from "../assets/logo/log.svg";
-import log from "../assets/logo/logo.png"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import logoSvg from "../assets/logo/prima.svg";
 
-export default function Header({ page }) {
-  const { scrolled, isVisible } = useScroll();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const NAV = [
+  { label: "الرئيسية", to: "/" },
+  { label: "المشاريع", to: "/projects" },
+];
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
   return (
     <>
+      {/* ─── HEADER ─────────────────────────────────────────────
+          position: relative — normal document flow, scrolls away.
+          No fixed/sticky, no spacer needed.                       */}
+      <header className="relative w-full z-20 h-16 bg-white border-b border-gray-200/70">
+        <div className="h-full max-w-7xl mx-auto px-5 sm:px-10 flex items-center justify-between">
+
+          {/* LEFT — CTA (desktop) / hamburger (mobile) */}
+          <div className="flex items-center gap-2.5">
+
+            {/* Desktop CTAs */}
+            <div className="hidden md:flex items-center gap-2">
+              <a
+                href="https://wa.me/905436535134"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 h-8 px-4 bg-gray-950 hover:bg-gray-800 text-white text-[12px] font-medium rounded-sm tracking-widest transition-colors"
+              >
+                <MessageCircle size={12} strokeWidth={2} />
+                واتساب
+              </a>
+              <a
+                href="tel:+905436535134"
+                className="flex items-center gap-1.5 h-8 px-4 border border-gray-200 hover:border-gray-400 text-gray-600 hover:text-gray-950 text-[12px] font-medium rounded-sm tracking-widest transition-colors"
+              >
+                <Phone size={12} strokeWidth={2} />
+                اتصل بنا
+              </a>
+            </div>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden flex items-center justify-center w-9 h-9 text-gray-700 hover:text-gray-950 transition-colors"
+              onClick={() => setOpen(true)}
+              aria-label="القائمة"
+            >
+              <Menu size={21} strokeWidth={1.7} />
+            </button>
+          </div>
+
+          {/* CENTER — Desktop nav */}
+          <nav className="hidden md:flex items-center gap-10">
+            {NAV.map(({ label, to }) => (
+              <Link
+                key={to}
+                to={to}
+                className="relative text-[12px] font-medium text-gray-400 hover:text-gray-950 tracking-widest uppercase transition-colors group"
+              >
+                {label}
+                <span className="absolute -bottom-0.5 right-0 left-0 h-px bg-gray-950 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right" />
+              </Link>
+            ))}
+          </nav>
+
+          {/* RIGHT — Logo */}
+          <Link to="/" className="flex items-center">
+            <img src={logoSvg} alt="Prima Properties" className="h-8 w-auto" />
+          </Link>
+        </div>
+      </header>
+
+      {/* ─── MOBILE DRAWER ──────────────────────────────────────── */}
       <div
-        className={`hidden md:block w-full bg-gray-100 py-2 transition-transform duration-300 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
+        className={`fixed inset-y-0 right-0 z-50 w-72 bg-[#0c0c0c] flex flex-col transform transition-transform duration-300 ease-in-out ${
+          open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="container mx-auto px-4 flex justify-end items-center gap-6">
+        <div className="flex items-center justify-between px-6 h-16 border-b border-white/10 shrink-0">
+          <button
+            onClick={() => setOpen(false)}
+            className="text-white/50 hover:text-white transition-colors"
+          >
+            <X size={20} strokeWidth={1.7} />
+          </button>
+          <img src={logoSvg} alt="Prima Properties" className="h-7 w-auto invert opacity-70" />
+        </div>
+
+        <nav className="flex-1 flex flex-col justify-center px-8 gap-2">
+          {NAV.map(({ label, to }) => (
+            <Link
+              key={to}
+              to={to}
+              onClick={() => setOpen(false)}
+              className="text-white/70 hover:text-white text-2xl font-semibold py-4 border-b border-white/8 transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="px-6 pb-10 flex flex-col gap-3 shrink-0">
           <a
             href="https://wa.me/905436535134"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors text-sm"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center gap-2 h-12 bg-white text-gray-950 font-semibold text-sm rounded-sm hover:opacity-90 transition-opacity"
           >
-            <BsWhatsapp className="text-lg" />
-            <span>واتساب</span>
+            <MessageCircle size={15} />
+            تواصل عبر واتساب
           </a>
           <a
             href="tel:+905436535134"
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors text-sm"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center gap-2 h-12 border border-white/20 hover:border-white/50 text-white font-semibold text-sm rounded-sm transition-colors"
           >
-            <FiPhone />
-            <span>+٩٠ ٥٤٣ ٦٥٣ ٥١ ٣٤</span>
-          </a>
-          <a
-            href="mailto:selim.safak11@gmail.com"
-            className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors text-sm"
-          >
-            <FiMail />
-            <span>selim.safak11@gmail.com</span>
+            <Phone size={15} />
+            اتصل بنا
           </a>
         </div>
       </div>
 
-      {/* الهيدر الرئيسي */}
-      <div
-        className={`fixed  w-full z-30 transition-all duration-300 ${
-          scrolled
-            ? "py-8 bg-white shadow-lg top-0"
-            : "py-4 bg-white md:bg-transparent"
-        } ${!isVisible && "-translate-y-full"}`}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            {/* الشعار */}
-            <div className="flex items-center">
-              <img  src={log} alt="Logo" className="h-8 w-auto" />
-            </div>
-
-            {/* رموز الاتصال للموبايل */}
-            <div className="md:hidden flex items-center gap-4">
-              <a
-                href="https://wa.me/905436535134"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-800 hover:text-green-600 transition-colors"
-              >
-                <BsWhatsapp className="text-xl" />
-              </a>
-              <a
-                href="tel:+905436535134"
-                className="text-gray-800 hover:text-blue-600 transition-colors"
-              >
-                <FiPhone className="text-xl" />
-              </a>
-              <a
-                href="mailto:selim.safak11@gmail.com"
-                className="text-gray-800 hover:text-red-600 transition-colors"
-              >
-                <FiMail className="text-xl" />
-              </a>
-            </div>
-
-            {/* قائمة سطح المكتب */}
-            <div className="hidden md:flex items-center gap-8">
-              <a
-                href="/"
-                className={`flex items-center gap-2 ${
-                  page === "home" && !scrolled ? "text-white" : "text-gray-800"
-                } hover:text-blue-600 transition-colors font-medium`}
-              >
-                <BiHomeAlt />
-                <span>الرئيسية</span>
-              </a>
-              <a
-                href="/projects"
-                className={`flex items-center gap-2 ${
-                  page === "home" && !scrolled ? "text-white" : "text-gray-800"
-                } hover:text-blue-600 transition-colors font-medium`}
-              >
-                <MdOutlinePhotoLibrary />
-                <span>المشاريع</span>
-              </a>
-            </div>
-
-            {/* أزرار الاتصال لسطح المكتب */}
-            <div className="hidden md:flex items-center gap-4">
-              <a
-                href="tel:+905436535134"
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
-              >
-                <FiPhone />
-                <span>اتصل بنا</span>
-              </a>
-              <a
-                href="https://wa.me/905436535134"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
-              >
-                <BsWhatsapp />
-                <span>واتساب</span>
-              </a>
-            </div>
-
-            {/* زر قائمة الموبايل */}
-            <button
-              className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200"
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
-              <HiMenu className="text-2xl text-gray-800" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* قائمة الموبايل */}
-      <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          <div className="flex justify-between items-center p-6 border-b">
-            <h2 className="text-xl font-bold text-gray-800">القائمة</h2>
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 hover:bg-gray-100 rounded-lg"
-            >
-              <IoMdClose className="text-2xl text-gray-600" />
-            </button>
-          </div>
-
-          <div className="flex-1 overflow-y-auto">
-            <div className="p-6 space-y-6">
-              {/* روابط قائمة الموبايل */}
-              <div className="space-y-4">
-                <a
-                  href="/"
-                  className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <BiHomeAlt className="text-xl" />
-                  <span className="font-medium">الرئيسية</span>
-                </a>
-                <a
-                  href="/projects"
-                  className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <MdOutlinePhotoLibrary className="text-xl" />
-                  <span className="font-medium">المشاريع</span>
-                </a>
-              </div>
-
-              {/* أزرار الاتصال للموبايل */}
-              <div className="space-y-3">
-                <a
-                  href="tel:+905436535134"
-                  className="flex items-center gap-2 w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  <FiPhone />
-                  <span>اتصل بنا</span>
-                </a>
-                <a
-                  href="https://wa.me/905436535134"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 w-full px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  <BsWhatsapp />
-                  <span>واتساب</span>
-                </a>
-                <a
-                  href="mailto:selim.safak11@gmail.com"
-                  className="flex items-center gap-2 w-full px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-                >
-                  <FiMail />
-                  <span>أرسل بريد إلكتروني</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Overlay */}
-      {isMobileMenuOpen && (
+      {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsMobileMenuOpen(false)}
+          className="fixed inset-0 z-40 bg-black/55 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
         />
       )}
     </>

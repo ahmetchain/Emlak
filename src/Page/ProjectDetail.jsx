@@ -32,7 +32,15 @@ export default function ProjectDetail() {
     );
   }
 
-  const currentSlide = project.slides[activeIndex];
+  // All images: slides first, then any extras (no text)
+  const allImages = [
+    ...project.slides,
+    ...(project.extraImages || []).map((img) => ({ image: img })),
+  ];
+
+  // Clamp text index — extras reuse the last slide's text
+  const textIdx = Math.min(activeIndex, project.slides.length - 1);
+  const currentSlide = project.slides[textIdx];
 
   return (
     <div className="min-h-screen bg-white">
@@ -96,7 +104,7 @@ export default function ProjectDetail() {
         <Swiper
           modules={[Navigation]}
           navigation
-          loop={project.slides.length > 1}
+          loop={allImages.length > 1}
           speed={600}
           grabCursor
           slidesPerView={1.12}
@@ -106,7 +114,7 @@ export default function ProjectDetail() {
           className="meraas-gallery-swiper"
           style={{ paddingRight: "0" }}
         >
-          {project.slides.map((slide, i) => (
+          {allImages.map((slide, i) => (
             <SwiperSlide key={i}>
               <div className="w-full overflow-hidden" style={{ aspectRatio: "16/9" }}>
                 <img
@@ -124,7 +132,7 @@ export default function ProjectDetail() {
         <div className="bg-gray-950 px-5 sm:px-10 lg:px-20 py-10 sm:py-14">
           <AnimatePresence mode="wait">
             <motion.div
-              key={activeIndex}
+              key={textIdx}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -143,7 +151,7 @@ export default function ProjectDetail() {
 
           {/* Slide counter — static */}
           <p className="text-gray-700 text-sm font-mono text-left mt-8">
-            {String(activeIndex + 1).padStart(2, "0")} / {String(project.slides.length).padStart(2, "0")}
+            {String(activeIndex + 1).padStart(2, "0")} / {String(allImages.length).padStart(2, "0")}
           </p>
         </div>
       </section>
