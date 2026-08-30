@@ -42,6 +42,11 @@ export default function ProjectDetail() {
   const textIdx = Math.min(activeIndex, project.slides.length - 1);
   const currentSlide = project.slides[textIdx];
 
+  // Intro paragraph: `intro` when the project defines one ("" hides it),
+  // otherwise fall back to the first slide's description
+  const introText =
+    project.intro !== undefined ? project.intro : project.slides[0].description;
+
   return (
     <div className="min-h-screen bg-white">
       <Header page="projects" />
@@ -92,10 +97,13 @@ export default function ProjectDetail() {
           </p>
         )}
 
-        {/* Intro description (first slide desc) */}
-        <p className="text-gray-600 text-base sm:text-lg leading-relaxed sm:leading-loose text-right max-w-3xl ml-auto">
-          {project.slides[0].description}
-        </p>
+        {/* Intro description — `intro` if defined (empty string hides it),
+            otherwise the first slide's text */}
+        {introText && (
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed sm:leading-loose text-right max-w-3xl ml-auto whitespace-pre-line">
+            {introText}
+          </p>
+        )}
       </section>
 
       {/* ── GALLERY + DARK TEXT (Meraas style) ─────────── */}
@@ -143,7 +151,7 @@ export default function ProjectDetail() {
                   {currentSlide.headline}
                 </h2>
               )}
-              <p className="text-gray-400 text-base sm:text-lg leading-relaxed sm:leading-loose text-right max-w-3xl ml-auto">
+              <p className="text-gray-400 text-base sm:text-lg leading-relaxed sm:leading-loose text-right max-w-3xl ml-auto whitespace-pre-line">
                 {currentSlide.description}
               </p>
             </motion.div>

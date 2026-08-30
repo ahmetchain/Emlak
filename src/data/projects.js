@@ -9,6 +9,7 @@ export const PROJECTS = [
     subtitle: "ليفنت، إسطنبول | جنسية | سند جاهز",
     roomTypes: "1+1 • 2+1 • 3+1 | خيارات متنوعة مع شرفات بمسابح خاصة وحدائق واسعة",
     folder: "polatleventexclusive",
+    video: "/videos/polatleventexclusive.mp4",
     coverImage: "/polatleventexclusive/4 (1).webp",
     extraImages: [
       "/polatleventexclusive/6 (1).webp",
@@ -51,6 +52,7 @@ export const PROJECTS = [
     subtitle: "موقع فريد على البحر | رصيف بحري خاص | إطلالة بحرية ساحرة | خدمات فندقية من \"ماريوت\"",
     roomTypes: "2+1 | 3+1 | 4+1 | 5+1 | قصور خاصة (6+1)",
     folder: "veluxyalikavak",
+    video: "/videos/veluxyalikavak.mp4",
     coverImage: "/veluxyalikavak/Velux.webp",
     extraImages: [
       "/veluxyalikavak/Velux (1).webp",
@@ -87,6 +89,7 @@ export const PROJECTS = [
     subtitle: "في قلب المدينة | سكن فاخر | مركز أعمال | فندق | شقق بحدائق | إطلالة بحرية | قلب المركز التجاري",
     roomTypes: "1+1 / 2+1 / 3+1 / 4+1 | المناطق التجارية | فرص استثمارية | محلات تجارية",
     folder: "folkartorion",
+    video: "/videos/folkartorion.mp4",
     coverImage: "/folkartorion/orion-dis-mekan_2_2026-02-24_13-15-41.webp",
     extraImages: [
       "/folkartorion/orion-dis-mekan-1_2026-02-24_13-15-07.webp",
@@ -126,6 +129,7 @@ export const PROJECTS = [
     subtitle: "الحياة بدأت بالفعل منذ شهر يونيو | بمسبح إنفينيتي | جار المارينا",
     roomTypes: "6+2 / 8+2",
     folder: "woxyalikavak",
+    video: "/videos/woxyalikavak.mp4",
     coverImage: "/woxyalikavak/21-Tecno_Yalikavak_Ext_DroneD126.webp",
     extraImages: [
       "/woxyalikavak/3-Tecno_Yalikavak_Ext_C014.webp",
@@ -162,6 +166,7 @@ export const PROJECTS = [
     subtitle: "على البحر مباشرة | تسليم فوري",
     roomTypes: "1+1 | 2+1 | 3+1 | 4+1 | 4.5+1",
     folder: "seapearlatakoy",
+    video: "/videos/seapearlatakoy.mp4",
     coverImage: "/seapearlatakoy/2 (2).webp",
     extraImages: [
       "/seapearlatakoy/2.webp",
@@ -198,6 +203,7 @@ export const PROJECTS = [
     subtitle: "تسليم فوري | إطلالة بحرية | مرافق اجتماعية | في قلب المدينة",
     roomTypes: "1+2 / 2+1 / 3+1 / 4+1",
     folder: "folkartnova",
+    video: "/videos/folkartnova.mp4",
     coverImage: "/folkartnova/nova-gallery2_2023-10-18_15-42-44.webp",
     extraImages: [
       "/folkartnova/bedroom_02_2022-12-01_12-15-30.webp",
@@ -233,6 +239,7 @@ export const PROJECTS = [
     subtitle: "تصميم معماري فريد في قلب المدينة",
     roomTypes: "1+1 / 2+1 / 3+1 Dubleks / 4+1 / المساحات التجارية",
     folder: "folkartmona",
+    video: "/videos/folkartmona.mp4",
     coverImage: "/folkartmona/1_2025-01-09_10-56-25.webp",
     extraImages: [
       "/folkartmona/Screenshot_2026-03-01-16-57-50-520_cn.wps.xiaomi.abroad.lite.webp",
@@ -256,6 +263,83 @@ export const PROJECTS = [
         headline: "حياة هادئة مع امتيازات اجتماعية متكاملة",
         description:
           "يقدم المشروع تجربة سكنية بوتيكية تضم مساحات خضراء واسعة، مسابح، ومناطق مخصصة للاسترخاء. تم تصميم كل شقة بأعلى معايير الجودة لضمان أقصى درجات الراحة، مما يجعل «فولكارت مونا» مكاناً مثالياً للعيش والاستثمار طويل الأمد.",
+      },
+    ],
+  },
+  {
+    id: 8,
+    slug: "bigcountry",
+    title: "بيغ كاونتري",
+    location: "بويوك تشكمجه، إسطنبول",
+    subtitle: "إطلالة على البحر / مستقلة / بحمام سباحة خاص | مرافق اجتماعية / موقع ممتاز",
+    roomTypes: "فلل 1+4 - 1+5 - 1+6 - 1+7",
+    folder: "bigcountry",
+    video: "/videos/bigcountry.mp4",
+    coverImage: "/bigcountry/big1.webp",
+    intro:
+      "مشروع بيغ كاونتري (Big Country) - بويوك تشكمجه. حياة فاخرة في فيلا من طابق واحد تجمع بين الخصوصية، والرحابة، وجودة الحياة في إطار واحد.",
+    extraImages: [],
+    slides: [
+      {
+        image: "/bigcountry/big1.webp",
+        headline: "إطلالة",
+        description:
+          "تجربة حياة واسعة ومريحة مع إطلالة على البحيرة والطبيعة.",
+      },
+      {
+        image: "/bigcountry/big2.webp",
+        description:
+          "في مشروع (Big Country) الذي تم تصميم جميع الفلل فيه بحيث لا تحجب أي منها إطلالة الأخرى، ينتظركم الهدوء الذي تبحثون عنه مع إطلالة دون انقطاع على بحيرة بويوك تشكمجه وبحر مرمرة",
+      },
+      {
+        image: "/bigcountry/big3.webp",
+        description:
+          "أما في (Big Country Club)، فستتمكنون من الاستفادة من العديد من الفرص والمزايا الاستثنائية مثل ملاعب التنس، ملعب كرة السلة، ملعب كرة القدم، حمام سباحة مغلق نصف أولمبي، مناطق ألعاب الأطفال، المساحات المخصصة للعمل، ومساحة الـ Coffee Lounge",
+      },
+      {
+        image: "/bigcountry/big4.webp",
+        description:
+          "يتكون مشروع (Big Country) في بويوك تشكمجه من 126 فيلا مستقلة ذات طابق واحد. ويقدم المشروع لسكانه حياة خاصة ومريحة من خلال مخطط سكني ذي كثافة منخفضة.",
+      },
+    ],
+  },
+  {
+    id: 9,
+    slug: "brand",
+    title: "براند وادي إسطنبول",
+    location: "ألكنت، إسطنبول",
+    subtitle: "إطلالة على البحر والبحيرة / مسبح خاص / حديقة خاصة / مرافق اجتماعية / منزل ذكي",
+    roomTypes: "4+2 / 5+1 / 6+1 / 7+1 / 8+1 / 10+1",
+    folder: "brand",
+    video: "/videos/brand.mp4",
+    coverImage: "/brand/brand1.webp",
+    intro: "",
+    extraImages: [],
+    slides: [
+      {
+        image: "/brand/brand2.webp",
+        description:
+          "فلل (Brand Vadi) في Alkent: إطلالات ساحرة على البحر والبحيرة مع مسبح وحديقة خاصة لكل فيلا.\n☕ خدمات متكاملة: ماركات عالمية (Starbucks & Macro Center) وأنماط واسعة من (4+2) إلى (10+1).",
+      },
+      {
+        image: "/brand/brand3.webp",
+        description:
+          "موقع استثماري راقٍ: بالقرب من المدارس الدولية ونادي الفروسية مع نوادٍ رياضية ومسابح مغلقة.\n✨ تصميم فاخر: سقوف مرتفعة (4-7 أمتار)، نظام منزل ذكي، خيارات جاهزة وقيد الإنشاء",
+      },
+      {
+        image: "/brand/brand4.webp",
+        description:
+          "70% إطلالة بحرية وبحيرة: فلل مستقلة (طابق واحد ودوبلكس) مع خصوصية تامة ومساحات خضراء.\n🔑 حياة عائلية راقية: تكييف VRF، مرافق اجتماعية، وإمكانية تعديل التصميم حسب رغبتك.",
+      },
+      {
+        image: "/brand/brand5.webp",
+        description:
+          "70% إطلالة بحرية وبحيرة: فلل مستقلة (طابق واحد ودوبلكس) مع خصوصية تامة ومساحات خضراء.\n🔑 حياة عائلية راقية: تكييف VRF، مرافق اجتماعية، وإمكانية تعديل التصميم حسب رغبتك.",
+      },
+      {
+        image: "/brand/brand6.webp",
+        description:
+          "70% إطلالة بحرية وبحيرة: فلل مستقلة (طابق واحد ودوبلكس) مع خصوصية تامة ومساحات خضراء.\n🔑 حياة عائلية راقية: تكييف VRF، مرافق اجتماعية، وإمكانية تعديل التصميم حسب رغبتك.",
       },
     ],
   },

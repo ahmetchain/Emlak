@@ -9,18 +9,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import KaydirSVG from "../assets/logo/kaydir.svg";
+import { PROJECTS } from "../data/projects";
 
-// Ordered as requested — all served from /public/videos/
+// Built from the central project data — add a project in src/data/projects.js
+// with a `video` field and it shows up here automatically, in the same order.
 // poster: project cover image shown while video is loading (no ffmpeg needed)
-const SLIDES = [
-  { id: 1, src: "/videos/polatleventexclusive.mp4", poster: "/polatleventexclusive/4 (1).webp",                              title: "بولات ليفنت إكسكلوسيف" },
-  { id: 2, src: "/videos/veluxyalikavak.mp4",        poster: "/veluxyalikavak/Velux.webp",                                   title: "فيلوكس يالي كاواك" },
-  { id: 3, src: "/videos/folkartorion.mp4",           poster: "/folkartorion/orion-dis-mekan_2_2026-02-24_13-15-41.webp",    title: "فولكارت أوريون" },
-  { id: 4, src: "/videos/woxyalikavak.mp4",           poster: "/woxyalikavak/21-Tecno_Yalikavak_Ext_DroneD126.webp",         title: "واكس يالي كاواك" },
-  { id: 5, src: "/videos/seapearlatakoy.mp4",         poster: "/seapearlatakoy/2 (2).webp",                                  title: "سي بيرل أتاكوي" },
-  { id: 6, src: "/videos/folkartnova.mp4",            poster: "/folkartnova/nova-gallery2_2023-10-18_15-42-44.webp",         title: "فولكارت نوفا" },
-  { id: 7, src: "/videos/folkartmona.mp4",            poster: "/folkartmona/1_2025-01-09_10-56-25.webp",                    title: "فولكارت مونا" },
-];
+const SLIDES = PROJECTS.filter((p) => p.video).map((p) => ({
+  id: p.id,
+  src: p.video,
+  poster: p.coverImage,
+  title: p.title,
+}));
 
 // Shown only on the first slide with GSAP-driven swipe animation
 function SwipeIndicator({ visible }) {
