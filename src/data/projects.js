@@ -343,6 +343,106 @@ export const PROJECTS = [
       },
     ],
   },
+  {
+    id: 10,
+    slug: "atakoymarina",
+    title: "ريزيدنس مارينا أتاكوي",
+    location: "أتاكوي، إسطنبول",
+    subtitle: "إطلالة على البحر | مارينا خاصة | مرافق اجتماعية",
+    roomTypes: "1+1 / 2+1 / 3+1 / 4+1 / 5+1 / Penthouse",
+    folder: "atakoymarina",
+    video: "/videos/atakoymarina.mp4",
+    coverImage: "/atakoymarina/marina1.webp",
+    intro:
+      "موقع مركزي\nمشروع ريزيدنس فاخر في مارينا أتاكوي، جاهز للتسليم مع عدد محدود من الوحدات",
+    extraImages: [],
+    slides: [
+      {
+        image: "/atakoymarina/marina1.webp",
+        headline: "أعلى درجات الفخامة على البحر مباشرة",
+        description:
+          "✔ مشروع بوتيك بوحدات محدودة\n✔ عائد مستقبلي مع مستأجرين من النخبة\n✔ قيمة استثمارية عالية",
+      },
+      {
+        image: "/atakoymarina/marina2.webp",
+        headline: "الميزات الفاخرة",
+        description:
+          "• نظام المنزل الذكي\n• تدفئة أرضية + نظام تكييف VRV من Daikin\n• ماركات عالمية فاخرة: Gaggenau, Hansgrohe, Stosa Cucine\n• خصوصية عالية ونمط حياة بعيد عن الاكتظاظ",
+      },
+      {
+        image: "/atakoymarina/marina3.webp",
+        description:
+          "• مبنى واحد مكون من 17 طابقاً (مشروع خاص / Signature)\n• تصميم خاص لكل شقة (لا توجد نماذج مكررة)\n• المشروع جاهز للسكن الفوري\n• على مسافة مشي من المارينا والشاطئ",
+      },
+    ],
+  },
+  {
+    id: 11,
+    slug: "folkartterra",
+    title: "فولكارت تيرا تشيشمه",
+    location: "تشيشمه، إزمير",
+    subtitle: "مستقل | مسبح خاص | قريب من الشاطئ | مرافق اجتماعية",
+    roomTypes: "1+1 / 2+1 / 3+1 / 4+1",
+    folder: "folkartterra",
+    video: "/videos/folkartterra.mp4",
+    coverImage: "/folkartterra/terra1.webp",
+    intro:
+      "• 77 فيلا بتصاميم مختلفة\n• مساحات الأراضي: 485 م² - 585 م²\n• خيارات الفلل: 3+1 دوبلكس | 4+1 دوبلكس | 4+1 دوبلكس واسع\n• استقلالية وفخامة في قلب Çeşme\n• مسبح خاص بمساحة 35 م² (اختياري)",
+    extraImages: [],
+    slides: [
+      {
+        image: "/folkartterra/terra2.webp",
+        description:
+          "• موقع استثنائي على بعد دقائق من Alaçatı\n• بجوار أحسن الوجهات في Çeşme\n• عدد محدود من الوحدات الحصرية\n• منطقة فاخرة تزداد قيمتها الاستثمارية باستمرار",
+      },
+      {
+        image: "/folkartterra/terra3.webp",
+        description:
+          "مياه تركوازية صافية، وشواطئ ذهبية، وطبيعة ساحرة… إذا كانت إيجة تاج تركيا، فإن Çeşme هي جوهرته الأثمن.",
+      },
+      {
+        image: "/folkartterra/terra4.webp",
+        description:
+          "بفضل طريق Kuzey Marmara السريع أصبحت Çeşme أقرب إلى إسطنبول. لم تعد وجهة صيفية فقط، بل عنواناً ثانياً للعيش في كل الفصول الأربعة.",
+      },
+      {
+        image: "/folkartterra/terra5.webp",
+        description:
+          "بفضل طريق Kuzey Marmara السريع أصبحت Çeşme أقرب إلى إسطنبول. لم تعد وجهة صيفية فقط، بل عنواناً ثانياً للعيش في كل الفصول الأربعة.",
+      },
+    ],
+  },
+  {
+    id: 12,
+    slug: "denizkoru",
+    title: "دنيز كورو ساريير",
+    location: "ساريير، إسطنبول",
+    subtitle: "إطلالة على البحر والغابة / مسبح / مع حديقة / موقع مركزي",
+    roomTypes: "1+1 / 2+1 / 3+1 / 4+1 / 5+1",
+    folder: "denizkoru",
+    video: "/videos/denizkoru.mp4",
+    coverImage: "/denizkoru/denizkoru1.webp",
+    intro:
+      "إطلالة على البحر والغابات، مسبح، وحديقة... يتميز المشروع بتقديم إطلالتين منفصلتين في مرحلتين مختلفين؛ إحداهما على مضيق البوسفور والأخرى على الغابة. يقدم لكم حياة جديدة عالية الجودة على مساحة واسعة جداً، بفضل هندسته المعمارية الحديثة، وجودة البناء العالية، وتصميمه المتركز حول الإنسان، ومساحاته الخضراء الواسعة، وإمكانياته الاجتماعية الغنية",
+    extraImages: [],
+    slides: [
+      {
+        image: "/denizkoru/denizkoru2.webp",
+        description:
+          "يقدم لكم مشروع (DenizKoru Sarıyer) فرصة لحياة متداخلة مع الطبيعة والهروب السريع من صخب المدينة، بفضل نفق الشرايين الرئيسية، والمترو، والجسر الجديد، والمطار الجديد، والطرق السريعة.",
+      },
+      {
+        image: "/denizkoru/denizkoru3.webp",
+        description:
+          "على بعد خطوات قليلة من الشريط الساحلي للبوسفور في (DenizKoru Sarıyer)، بعضٌ من الجماليات التي سترافقكم في نزهتكم صباح يوم الأحد...",
+      },
+      {
+        image: "/denizkoru/denizkoru4.webp",
+        description:
+          "جودة حياة عالية بفضل الواجهات الزجاجية الواسعة المطلة على مناظر فريدة ولا متناهية، بالإضافة إلى الشرفات والحدائق التي تمنحكم متنفساً طبيعياً",
+      },
+    ],
+  },
 ];
 
 export function getProjectById(id) {

@@ -6,6 +6,9 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import { PROJECTS } from "../data/projects";
 
 export default function Projects() {
+  // Newest projects first — highest id is the most recently added
+  const projects = [...PROJECTS].sort((a, b) => b.id - a.id);
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex flex-col">
       <Header page="projects" />
@@ -33,7 +36,7 @@ export default function Projects() {
       {/* Projects list */}
       <div className="flex-1 px-5 sm:px-10 lg:px-20 py-10 sm:py-14">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
-          {PROJECTS.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 28 }}
